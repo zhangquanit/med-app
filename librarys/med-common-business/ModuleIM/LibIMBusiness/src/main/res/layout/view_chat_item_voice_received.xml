@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/chat_to_bo_pading"
+        android:paddingTop="@dimen/chat_to_bo_pading">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/chat_user_head_size"
+            android:layout_height="@dimen/chat_user_head_size"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/chat_pading"
+            android:layout_marginRight="@dimen/chat_msg_head_margin" />
+
+        <TextView
+            android:id="@+id/tv_group_sender_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:layout_toRightOf="@+id/iv_avatar"
+            android:textColor="@color/font_color_8f8f98"
+            android:textSize="@dimen/sp_11"
+            android:visibility="gone"
+            tools:text="看到附近的会计法" />
+
+        <FrameLayout
+            android:id="@+id/layout_content"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_40"
+            android:layout_below="@id/tv_group_sender_name"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:background="@drawable/shape_chat_left_white">
+
+            <TextView
+                android:id="@+id/tv_voice_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:textColor="#777777"
+                android:textSize="@dimen/sp_14" />
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:src="@drawable/msg_voice_play_other_3" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_red_point"
+            android:layout_width="@dimen/dp_7"
+            android:layout_height="@dimen/dp_7"
+            android:layout_alignTop="@id/layout_content"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_toRightOf="@+id/layout_content"
+            android:background="@drawable/msg_teb_red"
+            android:visibility="visible" />
+    </RelativeLayout>
+</LinearLayout>

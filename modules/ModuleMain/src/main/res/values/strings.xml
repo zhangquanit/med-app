@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_label_home">首页</string>
+    <string name="main_label_mine">我的</string>
+
+    <string name="tips_exit">再按一次返回退出应用</string>
+    <string name="edit_info">编辑资料</string>
+    <string name="common_fun">常用功能</string>
+    <string name="setting">设置</string>
+    <string name="save_modify">保存修改</string>
+    <string name="my_customer_service">我的客服</string>
+    <string name="save">保存</string>
+    <string name="message_notify">消息通知</string>
+    <string name="version_info">版本信息</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="logout">退出登录</string>
+    <string name="tip">提示</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string name="camera">拍照</string>
+    <string name="album">相册</string>
+    <string name="nick_name">昵称</string>
+    <string name="modify_nick_name">修改昵称</string>
+    <string name="basic_info_title">填写基本信息</string>
+    <string name="name_input_tip">请设置2-15个字，不能使用空格哦</string>
+    <string name="delete">删除</string>
+    <string name="please_select_time">请选择时间</string>
+    <string name="ok">确定</string>
+
+</resources>

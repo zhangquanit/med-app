@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="med_player_start_pause" />
+    <item type="id" name="med_player_back" />
+    <item type="id" name="med_player_fullscreen_switch" />
+
+</resources>

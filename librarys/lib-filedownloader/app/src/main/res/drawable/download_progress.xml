@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 总进度的颜色 -->
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="8dp" />
+            <solid android:color="#F3F0FF" />
+        </shape>
+    </item>
+    /
+    <!-- 当前进度的颜色 -->
+    <item android:id="@android:id/progress">
+        <scale
+            android:drawable="@drawable/download_progress_bg"
+            android:scaleWidth="100%" />
+    </item>
+</layer-list>

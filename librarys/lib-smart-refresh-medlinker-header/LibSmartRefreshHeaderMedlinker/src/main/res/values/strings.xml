@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="srl_header_pulling">下拉刷新</string>
+    <string name="srl_header_release">松手刷新</string>
+    <string name="srl_header_refreshing">刷新中...</string>
+    <string name="srl_header_finish">刷新完成</string>
+    <string name="srl_header_failed">刷新失败</string>
+</resources>

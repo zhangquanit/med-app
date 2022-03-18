@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="font_color_8f8f98">#8f8f98</color>
+    <color name="color_454553">#454553</color>
+    <color name="color_A8AFC3">#A8AFC3</color>
+    <color name="color_8c8c94">#8c8c94</color>
+    <color name="color_757575">#757575</color>
+    <color name="color_BABABF">#BABABF</color>
+    <color name="color_989AA7">#989AA7</color>
+    <color name="color_e2e7f1">#e2e7f1</color>
+    <color name="color_ff4848">#ff4848</color>
+    <color name="c_0064ff">#0064ff</color>
+    <color name="c_454553">#454553</color>
+    <color name="c_9A9AA4">#9A9AA4</color>
+    <color name="c_8f8f98">#8f8f98</color>
+    <color name="c_e2e7f1">#e2e7f1</color>
+    <color name="c_007AFF">#007AFF</color>
+    <color name="color_454553_alpha60">#99454553</color>
+</resources>

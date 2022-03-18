@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/chat_user_head_size"
+            android:layout_height="@dimen/chat_user_head_size"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/chat_pading"/>
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="@dimen/dp_280"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_avatar"
+            android:layout_toRightOf="@+id/iv_avatar"
+            android:background="@drawable/bg_trans_circle_frame_shadow_shape"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_28">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_cognitive_disorder_evaluation"
+                android:textColor="@color/color_454553"
+                android:textSize="@dimen/sp_15" />
+
+            <TextView
+                android:id="@+id/tv_evaluation_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/color_757575"
+                android:textSize="@dimen/sp_12"
+                tools:text="评测人：xxx" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@string/text_please_doctor_evaluation"
+                android:textColor="@color/color_757575"
+                android:textSize="@dimen/sp_12" />
+
+            <net.medlinker.base.view.LineView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginBottom="@dimen/dp_6"
+                android:layout_marginTop="@dimen/dp_6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:drawableEnd="@mipmap/msg_ic_arrow"
+                android:drawablePadding="@dimen/dp_4"
+                android:text="@string/check_detail"
+                android:textColor="@color/color_454553"
+                android:textSize="@dimen/sp_12" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

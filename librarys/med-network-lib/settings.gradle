@@ -1,0 +1,4 @@
+include ':LibNetwork'
+include ':app'
+rootProject.name = "med-network-lib"
+include ':LogReport'

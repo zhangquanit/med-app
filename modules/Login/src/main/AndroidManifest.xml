@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medlinker.login">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application>
+        <activity
+            android:name=".LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OfflineDialogActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/DialogActivityTransparent"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

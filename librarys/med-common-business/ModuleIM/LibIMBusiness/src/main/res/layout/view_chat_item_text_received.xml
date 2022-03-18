@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/chat_to_bo_pading"
+        android:paddingBottom="@dimen/chat_to_bo_pading">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/chat_user_head_size"
+            android:layout_height="@dimen/chat_user_head_size"
+            android:layout_marginLeft="@dimen/chat_pading"
+            android:layout_marginRight="@dimen/chat_msg_head_margin" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_group_sender_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:textColor="@color/font_color_8f8f98"
+                android:textSize="@dimen/sp_11"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_chat_white"
+                android:gravity="center_vertical|start"
+                android:lineSpacingMultiplier="1.1"
+                android:maxWidth="@dimen/dp_263"
+                android:paddingLeft="@dimen/dp_14"
+                android:paddingTop="@dimen/dp_11"
+                android:paddingRight="@dimen/dp_14"
+                android:paddingBottom="@dimen/dp_11"
+                android:textColor="@color/color_454553"
+                android:textSize="@dimen/sp_15"
+                tools:text="我是测试消息我是测试消息我是测试消息我是测试消息" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

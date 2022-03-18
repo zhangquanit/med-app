@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_med1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="手动注册MedRouter"
+        android:onClick="test1"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_med2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通过Arouter注册MedRouter"
+        android:onClick="test2"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_med3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ARouter注册"
+        android:onClick="test3"
+        android:textAllCaps="false" />
+
+
+    <Button
+        android:id="@+id/btn_med4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="model1"
+        android:onClick="test4"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_med5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="model2"
+        android:onClick="test5"
+        android:textAllCaps="false" />
+
+</LinearLayout>

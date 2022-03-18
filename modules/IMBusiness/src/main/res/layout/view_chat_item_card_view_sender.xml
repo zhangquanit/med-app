@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/chat_to_bo_pading"
+        android:paddingBottom="@dimen/chat_to_bo_pading">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/chat_user_head_size"
+            android:layout_height="@dimen/chat_user_head_size"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/chat_msg_head_margin"
+            android:layout_marginRight="@dimen/chat_pading" />
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_avatar"
+            android:background="@drawable/shape_rectangular_corner_10"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_14"
+            android:paddingTop="@dimen/dp_21"
+            android:paddingRight="@dimen/dp_14">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/color_454553"
+                android:textSize="@dimen/sp_15"
+                tools:text="吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉吗丁啉" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_conver"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginRight="@dimen/dp_13"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:textColor="#757575"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="医生居然怀疑自己的医术能不能就自己医生居然怀疑自己的医术能不能就自己医生居然怀疑自己的医术能不能就自己医生居然怀疑自己的医术能不能就自己" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_5"
+                android:layout_alignBottom="@+id/ll_info"
+                android:layout_marginTop="@dimen/dp_11"
+                android:background="#e2e7f1" />
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/dp_9"
+                android:layout_marginBottom="@dimen/dp_9"
+                android:drawableEnd="@mipmap/msg_ic_arrow"
+                android:drawablePadding="@dimen/dp_3"
+                android:textColor="@color/color_454553_alpha60"
+                android:textSize="@dimen/sp_12"
+                tools:text="text" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/status_layout"
+            layout="@layout/view_chat_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:layout_toLeftOf="@+id/layout_content"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

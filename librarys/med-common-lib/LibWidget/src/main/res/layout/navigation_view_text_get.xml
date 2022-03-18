@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--右边带消息的图标 -->
+<!--标题右边的 接受中...-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_tv_center_get"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textSize="@dimen/navigation_supply_text_size"
+    android:textColor="#99454554"
+    tools:text="接收中..."
+    />

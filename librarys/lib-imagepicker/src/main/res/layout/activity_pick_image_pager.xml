@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.medlinker.lib.imagepicker.widget.MultiTouchViewPager
+            android:id="@+id/vp_photos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+        <ProgressBar
+            android:id="@+id/pb_change_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:indeterminateDrawable="@anim/pick_rotate_loading"
+            android:indeterminateDuration="1000"
+            android:scrollbarStyle="outsideOverlay"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/text_photo_num"
+        android:layout_width="65dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/pick_pic_count"
+        android:gravity="center"
+        android:lines="1"
+        android:text="1/2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_54" />
+
+    <!-- <LinearLayout
+         android:id="@+id/ll_original_img"
+         android:layout_width="match_parent"
+         android:layout_height="48dp"
+         android:layout_alignParentBottom="true"
+         android:background="@color/black_alpha50"
+         android:orientation="vertical"
+         android:visibility="gone">-->
+
+
+    <TextView
+        android:id="@+id/tv_original_img_size"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:button="@null"
+        android:checked="false"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="查看原图"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_size_48"
+        android:visibility="gone" />
+    <!-- </LinearLayout>-->
+</RelativeLayout>

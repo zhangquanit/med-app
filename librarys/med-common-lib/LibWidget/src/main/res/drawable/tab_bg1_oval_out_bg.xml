@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" />
+    <stroke android:width="@dimen/Tab_bg1_out_stroke_width" android:color="@color/tab_bg1_oval_out"/>
+    <corners android:radius="@dimen/Tab_bg1_radius" />
+    <size  android:height="@dimen/Tab_bg1_height"  />
+</shape>

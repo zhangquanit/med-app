@@ -1,0 +1,78 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+        resValue("string", "applicationId", "\"${rootProject.ext.android.applicationId}\"")
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        consumerProguardFiles "proguard-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+repositories {
+    flatDir {
+        try {
+            dirs 'libs', '../LibIMBase/libs'
+        } catch (e) {
+
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation rootProject.ext.dependencies["med-file-upload"]
+    implementation rootProject.ext.dependencies["med-im-base"]
+//    api project(':ModuleIM:LibIMBase')
+
+    implementation rootProject.ext.dependencies["med-base"]
+    implementation rootProject.ext.dependencies["med-account"]
+    implementation rootProject.ext.dependencies["med-glide"]
+    implementation rootProject.ext.dependencies["med-video-inquriy"]
+
+    implementation rootProject.ext.dependencies["eventbus"]
+    implementation rootProject.ext.dependencies["med-router"]
+    implementation rootProject.ext.dependencies["med-widgets"]
+    //aRouter
+    implementation rootProject.ext.dependencies["arouter"]
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    //rx--2.x
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["rxlifecycle"]
+    implementation rootProject.ext.dependencies["rxlifecycle-android"]
+    implementation rootProject.ext.dependencies["rxlifecycle-components"]
+    //ButterKnife
+    implementation rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-apt"]
+
+    implementation rootProject.ext.dependencies["smart-refresh-layout"]
+    implementation rootProject.ext.dependencies["smart-refresh-header-material"]
+    implementation rootProject.ext.dependencies["recyclerview"]
+    implementation rootProject.ext.dependencies["android-pickerview"]
+
+
+}

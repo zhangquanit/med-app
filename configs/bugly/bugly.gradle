@@ -1,0 +1,90 @@
+def config = rootProject.ext;
+def HOST_TYPE_QA = config.project.hostTypeQa
+def HOST_TYPE_ONLINE = config.project.hostTypeOnline
+def urlType = project.hasProperty('hostType') ? Integer.parseInt(hostType) : HOST_TYPE_QA
+def mAppId = null
+def mAppKey = null
+if (urlType == HOST_TYPE_ONLINE) {
+    mAppId = config.accounts["bugly_release_appId"]
+    mAppKey = config.accounts["bugly_release_appKey"]
+} else {
+    mAppId = config.accounts["bugly_debug_appId"]
+    mAppKey = config.accounts["bugly_debug_appKey"]
+}
+println("bugly AppId=" + mAppId)
+println("bugly AppKey=" + mAppKey)
+def pkg = config.android["applicationId"]
+def version = config.android["versionName"]
+
+afterEvaluate {
+    def uploadMapping = tasks.findByName('uploadMapping')
+    if (null != uploadMapping) {
+        def packageOnlineReleaseTask = tasks.findByName('packageOnlineRelease')
+        if (null != packageOnlineReleaseTask) {
+            packageOnlineReleaseTask.finalizedBy(uploadMapping)
+        }
+        def uploadOnlineReleaseMapping = tasks.findByName('uploadOnlineReleaseMapping')
+        if (null != uploadOnlineReleaseMapping) {
+            uploadOnlineReleaseMapping.finalizedBy(uploadMapping)
+        }
+        def uploadOnlineReleaseMappingWhenExists = tasks.findByName('uploadOnlineReleaseMappingWhenExists')
+        if (null != uploadOnlineReleaseMappingWhenExists) {
+            uploadOnlineReleaseMappingWhenExists.finalizedBy(uploadMapping)
+        }
+    }
+}
+
+/**
+ * 重新打包 生成mapping文件上传
+ */
+task uploadOnlineReleaseMapping(dependsOn: ["clean", "assembleOnlineRelease"]) {
+    setGroup("bugly")
+    mustRunAfter("clean")
+    dependsOn("assembleOnlineRelease")
+}
+/**
+ * 如果存在mapping文件 直接可上传
+ */
+task uploadOnlineReleaseMappingWhenExists() {
+    setGroup("bugly")
+}
+
+/**
+ * mapping文件上传任务
+ */
+task uploadMapping() {
+    doLast {
+        String scriptDir = "${rootProject.projectDir}/configs/bugly"
+        String mappingFileDirName = "${rootProject.projectDir}/app/build/outputs/mapping/online/release"
+        String mappingFileName = "mapping.txt"
+        String shellScript = "${scriptDir}/upload.sh"
+        String uploadFilePath = "../../app/build/outputs/mapping/online/release/mapping.txt"
+
+        File mappingFile = new File(mappingFileDirName, mappingFileName)
+        if (!mappingFile.exists()) {
+            println '##############################################'
+            println '未发现mapping文件 请执行uploadOnlineReleaseMapping任务上传'
+            println '##############################################'
+            return
+        }
+        println("mappingFile=" + mappingFile.getAbsolutePath())
+
+        String cmd = "chmod 777 ${shellScript}"
+        println("执行命令：" + cmd)
+        def proc = cmd.execute()
+        proc.waitFor()
+
+        cmd = "${shellScript} ${scriptDir} ${mAppId} ${mAppKey} ${pkg} ${version} ${uploadFilePath}"
+        println("执行命令：" + cmd)
+        proc = cmd.execute()
+        BufferedReader br = new BufferedReader(new InputStreamReader(proc.inputStream))
+        String line = null
+        while ((line = br.readLine()) != null) {
+            println(line)
+        }
+        proc.waitFor()
+    }
+}
+
+
+

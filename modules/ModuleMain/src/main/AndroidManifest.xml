@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.medlinker.main">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application>
+
+        <activity
+            android:name="net.medlinker.main.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name="net.medlinker.main.mine.userInfo.EditNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="net.medlinker.main.mine.userInfo.ModifyUserInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="net.medlinker.main.mine.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="net.medlinker.main.mine.AboutActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="net.medlinker.main.mine.userInfo.BasicInfoActivity"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--基础颜色-->
+    <!--白色-->
+    <color name="ui_white">#FFFFFF</color>
+    <!--橙色-->
+    <color name="ui_orange">#FF9300</color>
+    <!--红色-->
+    <color name="ui_red">#FF3030</color>
+    <!--蓝色-->
+    <color name="ui_blue">#1E8AFF</color>
+    <!--1级黑-->
+    <color name="ui_black1">#2A2A2A</color>
+    <!--2级黑-->
+    <color name="ui_black2">#4A4A4A</color>
+    <!--3级黑-->
+    <color name="ui_black3">#6A6A6A</color>
+    <!--4级黑-->
+    <color name="ui_black4">#9A9A9A</color>
+    <!--enable false 颜色-->
+    <color name="ui_enable_false">#DDDDDD</color>
+    <!--默认背景颜色 颜色-->
+    <color name="ui_bg">#F6F7F8</color>
+    <!--透明 颜色-->
+    <color name="ui_transparent">#00000000</color>
+
+    <!-- ~~~~~~~~~~~~按钮~~~~~~~~~~~~~ -->
+    <!--按钮不可点击背景色-->
+    <color name="button_enable_false">@color/ui_enable_false</color>
+    <!-- ·······纯色按钮········ -->
+    <!--蓝色按钮-->
+    <color name="button_blue">@color/ui_blue</color>
+    <color name="button_blue_pressed">#4BA1FF</color>
+    <!--红色按钮-->
+    <color name="button_red">@color/ui_red</color>
+    <color name="button_red_pressed">#FF5959</color>
+    <!--橙色按钮-->
+    <color name="button_orange">@color/ui_orange</color>
+    <color name="button_orange_pressed">#FFA833</color>
+    <!--灰色按钮-->
+    <color name="button_gray">#F1F1F1</color>
+    <!-- ·······框按钮········ -->
+    <color name="button_border_enable_false">@color/ui_white</color>
+    <!--蓝框按钮-->
+    <!--蓝框按下背景色-->
+    <color name="button_border_blue_pressed">#eaf4ff</color>
+    <!--橙框按钮-->
+    <!--橙框按下背景色-->
+    <color name="button_border_orange_pressed">#fff6ea</color>
+    <!--灰框按钮-->
+    <color name="button_border_gray">#CCCCCC</color>
+    <!-- ·······button文字····框按钮文字按下···· -->
+    <color name="button_text_black">@color/ui_black1</color>
+    <color name="button_text_blue_pressed">#3596FF</color>
+    <color name="button_text_orange_pressed">@color/button_orange</color>
+
+    <!-- ~~~~~~~~~~~~标签 的颜色值~~~~~~~~~~~~~ -->
+    <!--灰色标签-->
+    <color name="label_gray">#F5F5F5</color>
+    <color name="label_border_blue_solid">#eff6ff</color>
+    <color name="label_border_blue_stroke">@color/ui_blue</color>
+
+    <!-- ~~~~~~~~~~~~TAB~~~~~~~~~~~~~ -->
+    <color name="tab_slide_line">@color/ui_blue</color>
+    <!--TAB文字颜色-->
+    <color name="tab_text_standard">@color/ui_black1</color>
+    <color name="tab_text_standard_selected">@color/ui_blue</color>
+    <color name="tab_text_bg1">@color/ui_black1</color>
+    <color name="tab_text_bg1_selected">@color/ui_white</color>
+    <color name="tab_text_bg2">@color/ui_black2</color>
+    <color name="tab_text_bg2_selected">@color/ui_blue</color>
+    <!--2级有背景的Tab的选中和未选中背景色-->
+    <color name="tab_bg2_oval_selected">#E2EFFF</color>
+    <color name="tab_bg2_oval_unselected">#F5F5F5</color>
+    <!--1级有背景的Tab的选中和未选中背景色-->
+    <color name="tab_bg1_oval_selected">@color/ui_blue</color>
+    <color name="tab_bg1_oval_unselected">@android:color/transparent</color>
+    <!--1级背景Tab的外部大框颜色-->
+    <color name="tab_bg1_oval_out">#F1F1F1</color>
+
+    <!-- ~~~~~~~~~~~~Navigation~~~~~~~~~~~~~ -->
+    <!--标题颜色-->
+    <color name="navigation_title_black">@color/ui_black1</color>
+    <color name="navigation_title_right_black">@color/ui_black1</color>
+    <color name="navigation_title_right_blue">@color/ui_blue</color>
+    <color name="navigation_title_right_blue_press">@color/ui_blue</color>
+    <color name="navigation_title_v_black">@color/ui_black2</color>
+
+    <!-- ~~~~~~~~~~~~搜索框~~~~~~~~~~~~~ -->
+    <color name="search_text_color">@color/ui_black1</color>
+    <color name="search_text_color_hint">#9A9A9A</color>
+    <color name="search_text_color_search">@color/ui_blue</color>
+    <color name="search_text_color_cancel">@color/ui_black1</color>
+    <color name="search_bg">#F1F1F1</color>
+
+    <!-- ~~~~~~~~~~~~线条~~~~~~~~~~~~~ -->
+    <!--线，􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰃􏰄􏰿􏱀􏱁􏱂􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿只用于NavigationBar标题栏底部的线条-->
+    <color name="ui_line_bar">#eeeeee</color>
+    <!--线，􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰃􏰄􏰿􏱀􏱁􏱂􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁􏰀􏰂􏰃􏰄􏰿􏱀􏱁􏱂􏰹􏰺􏰻􏰣􏰁􏱃􏰓􏰔􏰒􏰖􏰤􏱄􏱅􏰁主要用于整体分割线颜色，及按钮，标签背景色-->
+    <color name="ui_line">#F1F1F1</color>
+
+    <!-- ~~~~~~~~~~~~Dialog框~~~~~~~~~~~~~ -->
+    <color name="dialog_title">@color/ui_black1</color>
+    <color name="dialog_des">@color/ui_black3</color>
+    <color name="dialog_wheel_text_center">@color/ui_black1</color>
+    <color name="dialog_wheel_text_out">@color/ui_black4</color>
+
+    <!-- ~~~~~~~~~~~~分享弹窗~~~~~~~~~~~~~ -->
+    <color name="dialog_share_item_title">@color/ui_black3</color>
+
+    <!-- ~~~~~~~~~~~~输入框~~~~~~~~~~~~~ -->
+    <!--输入框边框颜色-->
+    <color name="input_edit_border">#E6E6E6</color>
+
+    <color name="dialog_bottom_time_tv_cancel">@color/button_blue</color>
+    <color name="dialog_bottom_time_tv_confirm">@color/button_blue</color>
+    <color name="dialog_bottom_time_tv_title">@color/ui_black1</color>
+
+</resources>

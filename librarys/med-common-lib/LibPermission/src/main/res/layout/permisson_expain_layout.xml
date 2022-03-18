@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    android:fitsSystemWindows="true"
+    android:background="@color/permission_explain_dialog_bg">
+
+    <com.medlinker.widget.shape.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/permission_explain_dialog_margin_left"
+        android:layout_marginRight="@dimen/permission_explain_dialog_margin_right"
+        android:orientation="vertical"
+        android:padding="@dimen/permission_explain_dialog_padding"
+        app:sp_radius="@dimen/permission_explain_dialog_bg_radius"
+        app:sp_solid="@color/permission_explain_dialog_bg_color">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/permission_explain_title"
+            android:textColor="@color/dialog_title"
+            android:textSize="@dimen/dialog_text_size_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/dialog_des"
+            android:textSize="@dimen/dialog_text_size_des"
+            tools:text="当你使用xxxx当你使用xxxx当你使用xxxx当你使用xxxx当你使用xxxx当你使用xxxx当你使用xxxx当你使用xxxx" />
+
+    </com.medlinker.widget.shape.ShapeLinearLayout>
+
+</RelativeLayout>

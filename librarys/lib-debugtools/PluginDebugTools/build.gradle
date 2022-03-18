@@ -1,0 +1,43 @@
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+def publishArchivesType = 1
+if (publishArchivesType == 2) {
+    apply from: 'upload-release.gradle'
+} else if (publishArchivesType == 0 || publishArchivesType == 1) {
+    apply from: 'upload-dev.gradle'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += []
+        }
+        kotlin {
+            srcDirs += ['src/main/kotlin', 'src/main/java']
+        }
+    }
+
+
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    compileOnly gradleApi()
+    compileOnly localGroovy()
+    //版本不能太高 否则会跟项目的as版本冲突
+    compileOnly "com.android.tools.build:gradle:4.1.1"
+    /* 👇👇👇👇 引用这两个模块 👇👇👇👇 */
+    api "com.didiglobal.booster:booster-api:3.0.0"
+    api "com.didiglobal.booster:booster-transform-asm:3.0.0"
+    kapt "com.google.auto.service:auto-service:1.0-rc6"
+}
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+}
+apply from: "push.gradle"

@@ -1,0 +1,213 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.alibaba.arouter'
+
+def config = rootProject.ext
+def buglyEnabled = config.accounts.buglyEnabled
+def umengApmEnabled = config.accounts.umengApmEnabled
+def logReportEnabled = config.accounts.logreportEnabled
+def getuiEnabled = config.accounts.getuiEnabled
+
+if (buglyEnabled) {
+    apply from: '../configs/bugly/bugly.gradle'
+}
+
+def HOST_TYPE_QA = config.project.hostTypeQa
+def HOST_TYPE_ONLINE = config.project.hostTypeOnline
+def urlType = project.hasProperty('hostType') ? Integer.parseInt(hostType) : HOST_TYPE_QA
+if (urlType != HOST_TYPE_ONLINE) {
+    apply from: "$rootDir/LibDebugTools/config/dt.gradle"
+}
+
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    buildToolsVersion config.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion config.android.minSdkVersion
+        targetSdkVersion config.android.targetSdkVersion
+        applicationId config.android.applicationId
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+
+        multiDexEnabled true
+        renderscriptSupportModeEnabled true
+        resConfigs "zh"
+        flavorDimensions "versionCode"
+        buildConfigField "Integer", "API_URL_TYPE", "${urlType}"
+        buildConfigField "String", "clientName", "\"${config.android.clientName}\""
+
+        //bugly
+        buildConfigField "boolean", "buglyEnabled", "${buglyEnabled}"
+        buildConfigField "String", "bugly_debug_appId", "\"${config.accounts["bugly_debug_appId"]}\""
+        buildConfigField "String", "bugly_release_appId", "\"${config.accounts["bugly_release_appId"]}\""
+        //umeng apm
+        def umengApmAppKey = urlType == HOST_TYPE_ONLINE ? config.accounts["umeng_apm_release_appkey"] : config.accounts["umeng_apm_debug_appkey"]
+        buildConfigField "boolean", "umengApmEnabled", "${umengApmEnabled}"
+        buildConfigField "String", "umeng_apm_appkey", "\"${umengApmAppKey}\""
+        //logreport
+        buildConfigField "boolean", "logReportEnabled", "${logReportEnabled}"
+        buildConfigField "String", "logreport_debug_appkey", "\"${config.accounts["logreport_debug_appkey"]}\""
+        buildConfigField "String", "logreport_release_appkey", "\"${config.accounts["logreport_release_appkey"]}\""
+        //个推
+        buildConfigField "boolean", "getuiEnabled", "${getuiEnabled}"
+        def getuiAppId = urlType == HOST_TYPE_ONLINE ? config.accounts["getui_appid_release"] : config.accounts["getui_appid_debug"]
+        buildConfigField "Integer","pushSource","${config.accounts["push_source"]}"
+        //app升级
+        def appUpdateKey = urlType == HOST_TYPE_ONLINE ? config.accounts["update_release_appkey"] : config.accounts["update_debug_appkey"]
+        //闪验一键登录
+        def syAppId = config.accounts["sy_appId"]
+        //统计
+        buildConfigField "String", "analyticsPlatforName", "\"${config.accounts["analytics_platforName"]}\""
+        buildConfigField "String", "analyticsUserType", "\"${config.accounts["analytics_userType"]}\""
+
+        manifestPlaceholders = [
+                APP_NAME      : config.android.appName,
+                APP_ICON      : config.android.appIcon,
+                GETUI_APPID   : getuiAppId,
+                APP_UPDATE_KEY: appUpdateKey,
+                SY_APPID      : syAppId,
+
+        ]
+
+        //arouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../medlinker.keystore")
+            keyAlias 'medlinker'
+            keyPassword 'medlinker'
+            storePassword 'medlinker'
+        }
+        debug {
+            storeFile file("../medlinker.keystore")
+            keyAlias 'medlinker'
+            keyPassword 'medlinker'
+            storePassword 'medlinker'
+        }
+    }
+
+    productFlavors {
+        online {
+        }
+        pre {
+        }
+    }
+
+    buildTypes {
+        debug {
+            ndk {
+                abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86'
+            }
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources false // 移除无用的resource文件
+            debuggable true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            ndk {
+                abiFilters 'arm64-v8a', 'armeabi-v7a'
+            }
+            boolean isRelease = urlType == HOST_TYPE_ONLINE
+            buildConfigField "boolean", "LOG_DEBUG", "${!isRelease}"
+
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            debuggable false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            multiDexKeepProguard file('multidex-config.pro')
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['assets', 'src/main/assets']
+        }
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'InvalidPackage', 'OldTargetApi', 'IconDensities', 'IconMissingDensityFolder'
+    }
+
+//    dataBinding {
+//        enabled true
+//    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation config.dependencies["med-base"]
+
+    //kotlin
+    implementation config.dependencies["kotlin"]
+    //DI
+    kapt config.dependencies["arouter-compiler"]
+    annotationProcessor config.dependencies["arouter-compiler"]
+
+    //其他
+    implementation config.dependencies["walle"]
+    implementation config.dependencies["tbs"]
+    //APM&CrashReport
+    implementation config.dependencies["bugly_crashreport"]
+    implementation config.dependencies["bugly-nativecrashreport"]
+    //umeng
+    implementation config.dependencies["umeng-common"]
+    implementation config.dependencies["umeng-asms"]
+    implementation config.dependencies["umeng-apm"]
+
+
+    //调试
+    debugImplementation config.debugDependencies.leakCanary
+    debugImplementation config.debugDependencies.blockCanary
+    releaseImplementation config.releaseDependencies.leakCanary
+    releaseImplementation config.releaseDependencies.blockCanary
+
+}

@@ -1,0 +1,49 @@
+
+apply from: file("x_dev/test/config.gradle")
+
+List gitList = medLibConfigs.findAll().asList()
+Map<String, String> sourceModuleMap = new HashMap()
+String prefix = ":${medLibDir}"
+int size = gitList.size()
+for (int i = 0; i < size; i++) {
+    Map map = gitList.get(i)["value"]
+    Object modules = map.get("modules")
+    if (modules instanceof Map) {
+        if (medLibIncludeAll || modules.get("status") == 1) {
+            String moduleName = modules.get("module")
+            String mavenGroup = modules.get("mavenGroup")
+            if (null != moduleName && "" != moduleName && null != mavenGroup && "" != mavenGroup) {
+                sourceModuleMap.put(mavenGroup, "${prefix}:${moduleName}")
+            }
+        }
+    } else {
+        List<Map> moduleList = modules
+        for (int j = 0; j < moduleList.size(); j++) {
+            Map item = moduleList.get(j)
+            if (medLibIncludeAll || item.get("status") == 1) {
+                String moduleName = item.get("module")
+                String mavenGroup = item.get("mavenGroup")
+                if (null != moduleName && "" != moduleName && null != mavenGroup && "" != mavenGroup) {
+                    sourceModuleMap.put(mavenGroup, "${prefix}:${moduleName}")
+                }
+            }
+        }
+    }
+}
+
+println("################### 待替换源码的 Modules")
+println(sourceModuleMap)
+
+subprojects {
+    configurations.all {
+        resolutionStrategy {
+            dependencySubstitution {
+                sourceModuleMap.each {
+                    substitute module(it.key) with project(it.value)
+                }
+            }
+        }
+    }
+}
+
+

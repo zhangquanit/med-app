@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="med_videoplayer_error_retry_tips">视频播放出错，正在尝试重连</string>
+    <string name="med_videoplayer_unknown_error">未知错误</string>
+    <string name="med_videoplayer_error_invalid_uri">播放地址无效</string>
+    <string name="med_videoplayer_error_resource_not_found">未找到资源</string>
+    <string name="med_videoplayer_network_error">请检查网络连接</string>
+    <string name="med_videoplayer_open_failed">播放器打开失败</string>
+    <string name="med_videoplayer_seek_failed">拖动失败</string>
+    <string name="med_videoplayer_hw_decode_failure">硬解失败</string>
+    <string name="med_videoplayer_player_destroyed">播放器已被销毁</string>
+    <string name="med_videoplayer_player_version_not_match">so 库版本不匹配，需要升级</string>
+    <string name="med_videoplayer_player_create_audio_failed">AudioTrack 初始化失败，可能无法播放音频</string>
+
+</resources>

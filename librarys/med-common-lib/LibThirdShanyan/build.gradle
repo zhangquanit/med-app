@@ -1,0 +1,53 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+def config = rootProject.ext
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    buildToolsVersion config.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion config.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles "proguard-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            consumerProguardFiles "proguard-rules.pro"
+        }
+        release {
+            minifyEnabled true
+            consumerProguardFiles "proguard-rules.pro"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    api fileTree(includes: ['*.jar', '*.aar'], dir: 'libs')
+    compileOnly config.dependencies["kotlin"]
+    compileOnly config.dependencies["med-util"]
+    compileOnly config.dependencies["med-log"]
+    //aar包手动上传到maven私库
+    api "com.medlinker.third:shanyan_sdk:2.3.3.9@aar"
+}
+apply from: 'maven-push.gradle'

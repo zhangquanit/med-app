@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/chat_to_bo_pading"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/chat_to_bo_pading">
+
+        <include
+            android:id="@+id/status_layout"
+            layout="@layout/view_chat_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rectangular_corner_10"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_14"
+            android:paddingTop="@dimen/dp_12"
+            android:paddingEnd="@dimen/dp_14"
+            android:paddingBottom="@dimen/dp_12">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textColor="@color/c_454553"
+                    android:textSize="@dimen/sp_15"
+                    tools:text="服务包" />
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:textColor="@color/c_8f8f98"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="标准版" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_11"
+                android:background="@color/c_e2e7f1" />
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_BABABF"
+                android:textSize="@dimen/sp_13"
+                tools:text="说明说明说明说明说明说明说明说明说明说明说明说明" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/dp_8"
+                android:drawableEnd="@mipmap/msg_ic_arrow"
+                android:drawablePadding="@dimen/dp_3"
+                android:text="查看详情"
+                android:textColor="@color/c_454553"
+                android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/chat_user_head_size"
+            android:layout_height="@dimen/chat_user_head_size"
+            android:layout_marginStart="@dimen/chat_msg_head_margin"
+            android:layout_marginEnd="@dimen/chat_pading" />
+    </LinearLayout>
+</LinearLayout>

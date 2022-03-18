@@ -1,0 +1,320 @@
+ext {
+    medLibDir = "librarys" //依赖组件目录
+    medLibCloneAll = false //是否clone组件仓库 必须打开才能源码开发联调(ps:为了不占用打包机器硬盘资源，默认是关闭的)
+    medLibIncludeAll = false //全部开启组件库源码依赖
+    medLibConfigs = [
+            //医联ABtest
+            "abtest"              : [
+                    "git"    : "https://git.medlinker.com/android/lib-abtest.git",
+                    "modules": [
+                            "module"    : "lib-abtest:LibAbtest",
+                            "mavenGroup": "com.medlinker:abtest",
+                            "status"    : 0,
+                    ]
+            ],
+            //医联统计库 目前主要是基于神策
+            "med-analytics"       : [
+                    "git"    : "https://git.medlinker.com/android/med-analytics-lib.git",
+                    "modules": [
+                            "module"    : "med-analytics-lib:LibAnalytics",
+                            "mavenGroup": "com.medlinker.analytics:android-analytics",
+                            "status"    : 0,
+                    ]
+
+            ],
+            //滴滴插件工具
+            "lib-debugtools"      : [
+                    "git"    : "https://git.medlinker.com/android/lib-debugtools.git",
+                    "modules": [
+                            "module"    : "",
+                            "mavenGroup": "",
+                            "status"    : 0,
+                    ]
+            ],
+            //文件下载
+            "filedownloader"      : [
+                    "git"    : "https://git.medlinker.com/android/lib-filedownloader.git",
+                    "modules": [
+                            "module"    : "lib-filedownloader:filedownloader",
+                            "mavenGroup": "com.medlinker.download:filedownloader",
+                            "status"    : 0,
+                    ]
+            ],
+
+            //医联hybrid协议
+            "med-hybrid"          : [
+                    "git"    : "https://git.medlinker.com/android/lib-hybrid.git",
+                    "modules": [
+                            //hybrid桥接协议
+                            [
+                                    "module"    : "lib-hybrid:bridge",
+                                    "mavenGroup": "com.medlinker.bridge:bridge",
+                                    "status"    : 0,
+                            ],
+                            //hybrid核心组件
+                            [
+                                    "module"    : "lib-hybrid:hybrid-core",
+                                    "mavenGroup": "com.medlinker.bridge:hybrid-core",
+                                    "status"    : 0,
+                            ]
+                    ]
+            ],
+            //医联/杏仁 日志上报
+            "logreport"           : [
+                    "git"    : "https://git.medlinker.com/android/lib-logreport.git",
+                    "modules": [
+                            //日志上报
+                            [
+                                    "module"    : "lib-logreport:LogReport",
+                                    "mavenGroup": "com.medlinker:LogReport",
+                                    "status"    : 0,],
+                            //日志上报库使用okhttp网络请求
+                            [
+                                    "module"    : "lib-logreport:okhttp",
+                                    "mavenGroup": "com.medlinker:LogReport-okhttp",
+                                    "status"    : 0,]
+                    ]
+            ],
+            //播放组件
+            "medplayer"           : [
+                    "git"    : "https://git.medlinker.com/android/lib-medplayer.git",
+                    "modules": [[
+                                        "module"    : "lib-medplayer:LibVideoPlayer",
+                                        "mavenGroup": "com.medlinker.player:medplayer",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //医联路由
+            "LibMedRouter"        : [
+                    "git"    : "https://git.medlinker.com/android/lib-medrouter.git",
+                    "modules": [[
+                                        "module"    : "lib-medrouter:LibMedRouter",
+                                        "mavenGroup": "com.medlinker.router:medrouter",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //retrofit组件库
+            "med-network-retrofit": [
+                    "git"    : "https://git.medlinker.com/android/med-network-lib.git",
+                    "modules": [
+                            //retrofit网络请求库封装
+                            [
+                                    "module"    : "med-network-lib:LibNetwork",
+                                    "mavenGroup": "com.medlinker.network:retrofit",
+                                    "status"    : 0,],
+                            //网络请求日志上报
+                            [
+                                    "module"    : "med-network-lib:LogReport",
+                                    "mavenGroup": "com.medlinker.network:retrofit-logreport",
+                                    "status"    : 0,],
+                    ]
+            ],
+            //mp3录制
+            "lib-record-mp3"      : [
+                    "git"    : "https://git.medlinker.com/android/lib-record-mp3.git",
+                    "modules": [[
+                                        "module"    : "lib-record-mp3:record-mp3",
+                                        "mavenGroup": "com.medlinker.record:record-mp3",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //rn热更
+            "rn-codepush"         : [
+                    "git"    : "https://git.medlinker.com/android/lib-rn-codepush.git",
+                    "modules": [[
+                                        "module"    : "lib-rn-codepush:LibRNCodePush",
+                                        "mavenGroup": "com.medlinker.reactnative:codepush",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //分享组件
+            "lib-share"           : [
+                    "git"    : "https://git.medlinker.com/android/lib-share.git",
+                    "modules": [[
+                                        "module"    : "lib-share",
+                                        "mavenGroup": "com.medlinker.base:share",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //医联刷新header
+            "refresh-header"      : [
+                    "git"    : "https://git.medlinker.com/android/lib-smart-refresh-medlinker-header.git",
+                    "modules": [[
+                                        "module"    : "lib-smart-refresh-medlinker-header:LibSmartRefreshHeaderMedlinker",
+                                        "mavenGroup": "com.medlinker.widget:smart-refresh-header-medlinker",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //基于七牛的文件上传
+            "LibFileUpload"       : [
+                    "git"    : "https://git.medlinker.com/android/libfileupload.git",
+                    "modules": [[
+                                        "module"    : "libfileupload",
+                                        "mavenGroup": "com.medlinker.upload:file-upload",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //网络请求库
+            "LibHttp"             : [
+                    "git"    : "https://git.medlinker.com/android/libhttp.git",
+                    "modules": [[
+                                        "module"    : "libhttp",
+                                        "mavenGroup": "com.medlinker.network:http",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //支付组件
+            "LibPay"              : [
+                    "git"    : "https://git.medlinker.com/android/lib-pay.git",
+                    "modules": [[
+                                        "module"    : "lib-pay:LibPay",
+                                        "mavenGroup": "com.medlinker.base:LibPay",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //图片浏览
+            "libphotoviewer"      : [
+                    "git"    : "https://git.medlinker.com/android/libphotoviewer.git",
+                    "modules": [[
+                                        "module"    : "libphotoviewer:LibPhotoViewer",
+                                        "mavenGroup": "com.medlinker:photoviewer",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //推送
+            "LibPush"             : [
+                    "git"    : "https://git.medlinker.com/android/LibPush.git",
+                    "modules": [[
+                                        "module"    : "LibPush",
+                                        "mavenGroup": "com.medlinker.push:LibPush",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //二维码扫描
+            "libqrcode"           : [
+                    "git"    : "https://git.medlinker.com/android/libqrcode.git",
+                    "modules": [[
+                                        "module"    : "libqrcode",
+                                        "mavenGroup": "",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //基于Arouter二次开发组件
+            "med-arouter"         : [
+                    "git"    : "https://git.medlinker.com/android/med-arouter.git",
+                    "modules": [[
+                                        "module"    : "",
+                                        "mavenGroup": "",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //ImagePicker
+            "image-picker"        : [
+                    "git"    : "https://git.medlinker.com/android/lib-imagepicker.git",
+                    "modules": [[
+                                        "module"    : "lib-imagepicker",
+                                        "mavenGroup": "com.medlinker.ui:imagepicker",
+                                        "status"    : 0,],
+                    ]
+            ],
+            //业务组件
+            "med-common-business" : [
+                    "git"    : "https://git.medlinker.com/android/med-common-business.git",
+                    "modules": [
+                            //IM基础库
+                            [
+                                    "module"    : "med-common-business:ModuleIM:LibIMBase",
+                                    "mavenGroup": "com.medlinker.im:im-base",
+                                    "status"    : 0,],
+                            //
+                            [
+                                    "module"    : "med-common-business:ModuleIM:LibIMBusiness",
+                                    "mavenGroup": "",
+                                    "status"    : 0,],
+                            //视频问诊
+                            [
+                                    "module"    : "med-common-business:ModuleVideoCall",
+                                    "mavenGroup": "com.medlinker:ModuleVideoCall",
+                                    "status"    : 0,],
+                    ]
+            ],
+            //通用组件
+            "med-common-lib"      : [
+                    "git"    : "https://git.medlinker.com/android/med-common-lib.git",
+                    "modules": [
+                            //账户
+                            [
+                                    "module"    : "med-common-lib:LibAccount",
+                                    "mavenGroup": "com.medlinker.base:account",
+                                    "status"    : 0,],
+                            //module基础组件
+                            [
+                                    "module"    : "med-common-lib:LibBase",
+                                    "mavenGroup": "com.medlinker.base:libbase",
+                                    "status"    : 0,],
+                            //Glide图片加载
+                            [
+                                    "module"    : "med-common-lib:LibGlide",
+                                    "mavenGroup": "com.medlinker:LibGlide",
+                                    "status"    : 0,],
+                            //百度定位
+                            [
+                                    "module"    : "med-common-lib:LibLocation",
+                                    "mavenGroup": "com.medlinker:LibLocation",
+                                    "status"    : 0,],
+                            //日志
+                            [
+                                    "module"    : "med-common-lib:LibLog",
+                                    "mavenGroup": "com.medlinker:LibLog",
+                                    "status"    : 0,],
+                            //动态权限申请
+                            [
+                                    "module"    : "med-common-lib:LibPermission",
+                                    "mavenGroup": "com.medlinker:LibPermission",
+                                    "status"    : 0,],
+                            //图片缩放浏览
+                            [
+                                    "module"    : "med-common-lib:LibPhotoView",
+                                    "mavenGroup": "com.medlinker:LibPhotoView",
+                                    "status"    : 0,],
+                            //七牛
+                            [
+                                    "module"    : "med-common-lib:LibQiniu",
+                                    "mavenGroup": "com.medlinker:LibQiniu",
+                                    "status"    : 0,],
+                            //APP升级
+                            [
+                                    "module"    : "med-common-lib:LibUpdate",
+                                    "mavenGroup": "com.medlinker.base:update",
+                                    "status"    : 0,],
+                            //工具库
+                            [
+                                    "module"    : "med-common-lib:LibUtils",
+                                    "mavenGroup": "com.medlinker:LibUtils",
+                                    "status"    : 0,],
+                            //UI控件
+                            [
+                                    "module"    : "med-common-lib:LibWidget",
+                                    "mavenGroup": "com.medlinker.ui:libwidget",
+                                    "status"    : 0,],
+                            //闪验一键登录
+                            [
+                                    "module"    : "med-common-lib:LibThirdShanyan",
+                                    "mavenGroup": "com.medlinker:LibThirdShanyan",
+                                    "status"    : 0,],
+                            //app 初始化
+                            [
+                                    "module"    : "med-common-lib:LibStartup",
+                                    "mavenGroup": "com.medlinker.base:startup",
+                                    "status"    : 0,],
+                            //隐私协议
+                            [
+                                    "module"    : "med-common-lib:LibPrivacy",
+                                    "mavenGroup": "com.medlinker.protocol:privacy",
+                                    "status"    : 0,],
+                    ]
+            ],
+
+
+    ]
+}

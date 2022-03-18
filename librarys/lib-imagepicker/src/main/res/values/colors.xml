@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="translucence">#99000000</color>
+    <color name="font_color_dedede">#dedede</color>
+    <color name="font_color_f2f2f2">#f2f2f2</color>
+    <color name="font_color_f3f3f3">#f3f3f3</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="viewfinder_mask">#66000000</color>
+    <color name="font_color_007eff_alpha50">#80007eff</color>
+    <color name="font_color_c6c6c6">#c6c6c6</color>
+    <color name="color_1E8AFF">#1E8AFF</color>
+    <color name="font_color_777777">#777777</color>
+    <color name="color_edf0f0">#EDF0F0</color>
+
+</resources>

@@ -1,0 +1,1 @@
+[使用文档](https://git.medlinker.com/android/lib-rn-codepush/blob/master/android/README.md)

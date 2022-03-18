@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--3个Tab-->
+    <com.medlinker.widget.tab.slidingtab.UiSlidingTabLayout
+        android:id="@+id/slidingTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Tab_bg1_height"
+        android:layout_marginTop="@dimen/Tab_bg1_margin_top_bottom"
+        android:layout_marginBottom="@dimen/Tab_bg1_margin_top_bottom"
+        android:layout_marginStart="@dimen/Tab_bg1_margin_left_right_three"
+        android:layout_marginEnd="@dimen/Tab_bg1_margin_left_right_three"
+        android:layout_centerHorizontal="true"/>
+</merge>

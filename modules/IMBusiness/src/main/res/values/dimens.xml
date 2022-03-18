@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="chat_to_bo_pading">10dp</dimen>
+    <dimen name="chat_msg_head_margin">8dp</dimen>
+    <dimen name="chat_user_head_size">32dp</dimen>
+    <dimen name="chat_pading">16dp</dimen>
+</resources>

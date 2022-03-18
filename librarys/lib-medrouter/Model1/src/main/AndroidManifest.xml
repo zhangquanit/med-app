@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medlinker.router.demo.model1">
+
+    <application>
+        <activity android:name=".Model1Activity" />
+        <activity android:name=".Model11Activity" />
+        <activity android:name=".Model1RouteActivity" />
+    </application>
+</manifest>

@@ -1,0 +1,3 @@
+include ':LibPhotoViewer'
+include ':app'
+rootProject.name = "PhotoViewer"

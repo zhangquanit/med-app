@@ -1,0 +1,50 @@
+
+println()
+println("################################ x_scripts检查 START #############################")
+def static execShellCmd(String cmd) {
+    println("执行命令：" + cmd)
+    def proc = null
+    BufferedReader br = null
+    try {
+        proc = cmd.execute()
+        br = new BufferedReader(new InputStreamReader(proc.inputStream))
+        String line = null
+        while ((line = br.readLine()) != null) {
+            println(line)
+        }
+        br.close()
+        proc.waitFor()
+    } finally {
+        try {
+            if (null != br) br.close()
+        } catch (Exception e) {
+
+        }
+        try {
+            if (null != proc) proc.destroy()
+        } catch (Exception e) {
+
+        }
+    }
+}
+
+def execPullRequest = false
+def requests = gradle.getStartParameter().getTaskRequests()
+requests.forEach {
+    if (null != it.args) {
+        it.args.forEach({ arg ->
+            if (arg.contains("clean")) {
+                execPullRequest = true
+            }
+        })
+    }
+}
+//更新仓库
+if(execPullRequest) {
+    def x_dev_git = new File(rootDir, "x_scripts").getAbsolutePath() + File.separator + ".git"
+    def commandLine = "git --git-dir=$x_dev_git pull"
+    execShellCmd(commandLine)
+}
+
+println("################################ x_scripts检查 END ###############################")
+println()

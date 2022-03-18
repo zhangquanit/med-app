@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+def config = rootProject.ext
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    buildToolsVersion config.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.android.minSdkVersion
+        targetSdkVersion config.android.targetSdkVersion
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+
+        //arouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+        consumerProguardFiles "proguard-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            consumerProguardFiles "proguard-rules.pro"
+        }
+        release {
+            minifyEnabled true
+            consumerProguardFiles "proguard-rules.pro"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+
+dependencies {
+    implementation config.dependencies["kotlin"]
+
+    api project(':modules:BaseApp')
+    implementation project(':modules:Login')
+
+    implementation config.dependencies["med-update"]
+    implementation config.dependencies["med-file-upload"]
+    implementation config.dependencies["med-permission"]
+    api config.dependencies["med-push"]
+    api config.dependencies["med-pay"]
+    api config.dependencies["med-privacy"]
+    implementation config.dependencies["med-image-picker"]
+    implementation config.dependencies["med-photo-viewer"]
+    //hybrid
+    api config.dependencies["med-bridge"]
+    api config.dependencies["med-hybrid-core"]
+    //路由
+    kapt config.dependencies["arouter-compiler"]
+    annotationProcessor config.dependencies["arouter-compiler"]
+
+
+
+
+}

@@ -1,0 +1,12 @@
+<resources>
+    <!--权限提醒 -->
+    <string name="permission_tip">"在设置-应用-%s-权限中开启存储空间权限，以正常使用医联功能"</string>
+    <string name="permission_camera_tip">"在设置-应用-%s-权限中开启相机权限，以正常使用医联功能"</string>
+    <string name="permission_voice_tip">"在设置-应用-%s-权限中开启语音权限，以正常使用医联功能"</string>
+    <string name="permission_voice_storage_tip">"在设置-应用-%s-权限中开启语音、存储空间权限，以正常使用医联功能"</string>
+    <string name="permission_camera_voice_tip">"在设置-应用-%s-权限中开启相机、语音权限，以正常使用医联功能"</string>
+    <string name="permission_camera_storage_tip">"在设置-应用-%s-权限中开启相机、存储空间权限，以正常使用医联功能"</string>
+
+    <string name="toast_root">应用不支持在Root设备上使用</string>
+
+</resources>

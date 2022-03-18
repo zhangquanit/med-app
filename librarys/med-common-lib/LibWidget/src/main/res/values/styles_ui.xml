@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- ~~~~~~~~~~~~搜索框~~~~~~~~~~~~~ -->
+    <!--只展示不能输入文字的搜索框的背景-->
+    <style name="Search_Bg_Show">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/search_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/search_bg</item>
+        <item name="android:paddingLeft">@dimen/search_padding_left_right</item>
+        <item name="android:paddingRight">@dimen/search_padding_left_right</item>
+        <item name="android:layout_marginLeft">@dimen/search_margin_left_right</item>
+        <item name="android:layout_marginRight">@dimen/search_margin_left_right</item>
+        <item name="android:layout_marginTop">@dimen/search_margin_top_bottom</item>
+        <item name="android:layout_marginBottom">@dimen/search_margin_top_bottom</item>
+    </style>
+
+
+    <!--新Ui默认值管理-->
+    <style name="App_UI_Default_Style">
+        <item name="search_hint">@string/search_hint_default</item>
+        <item name="input_hint">@string/search_hint_default</item>
+    </style>
+
+
+    <!-- ~~~~~~~~~~~~基础控件Style~~~~~~~~~~~~~ -->
+    <!--CheckBox-->
+    <style name="App_UI_CheckBox_Style">
+        <item name="android:layout_width">14dp</item>
+        <item name="android:layout_height">14dp</item>
+        <item name="android:background">@drawable/ui_selector_check_box</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~Dialog框~~~~~~~~~~~~~ -->
+    <style name="dialog_ui_style" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="dialog_ui_bottom_animation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_push_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_push_out</item>
+    </style>
+    <style name="dialog_ui_center_animation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_fade_out</item>
+    </style>
+
+    <!--     <style name="dialog_ui_loading" parent="android:style/Theme.Dialog"> -->
+    <style name="dialog_ui_loading">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+</resources>

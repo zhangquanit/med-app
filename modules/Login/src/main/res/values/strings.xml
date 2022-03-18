@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="use_phone_login">手机号登录</string>
+    <string name="phone_login_tip">未注册手机号验证后自动创建账号登录</string>
+    <string name="hint_input_phone">请输入手机号</string>
+    <string name="get_verify_code">获取验证码</string>
+    <string name="please_input_verify_code">请输入验证码</string>
+    <string name="verify_code_send_to">验证码已经发送至 +86 %s</string>
+    <string name="please_check_privacy">请勾选授权协议</string>
+    <string name="next_step">下一步</string>
+    <string name="get_verify_code_again">重新获取验证码 (%d)</string>
+    <string name="get_verify_code_again_1">重新获取验证码</string>
+    <string name="slide_code_tips">拖动滑块，把图片拼合就验证成功啦!</string>
+
+    <string name="user_login_offline">下线通知</string>
+    <string name="user_relogin">重新登录</string>
+    <string name="user_logout">退出登录</string>
+</resources>

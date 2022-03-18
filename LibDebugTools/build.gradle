@@ -1,0 +1,53 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+def config = rootProject.ext
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    buildToolsVersion config.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.android.minSdkVersion
+        targetSdkVersion config.android.targetSdkVersion
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+
+        consumerProguardFiles "proguard-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            consumerProguardFiles "proguard-rules.pro"
+        }
+        release {
+            minifyEnabled false
+            consumerProguardFiles "proguard-rules.pro"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+dependencies {
+    implementation project(':modules:BaseApp')
+    implementation config.dependencies["med-base"]
+    implementation config.dependencies["med-http"]
+    implementation config.dependencies["okhttp3"]
+    implementation config.dependencies["gson"]
+
+    implementation('com.medlinker:debugtools:1.0.9') {
+        exclude group: 'androidx.swiperefreshlayout', module: 'swiperefreshlayout'
+        exclude group: 'com.google.zxing', module: 'core'
+//        exclude group: 'com.android.volley', module: 'volley'
+        exclude group: 'com.medlinker.router', module: 'medrouter'
+        exclude group: 'com.medlinker.network', module: 'retrofit'
+    }
+}

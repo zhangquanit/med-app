@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:clickable="false"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top"
+        android:padding="10dp"
+        android:src="@mipmap/navigation_back_gray"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/loading_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="center"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/loading_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/loading_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/loading_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:textColor="#9A9A9A"
+            android:textSize="14sp" />
+
+        <com.medlinker.widget.button.CommonButton
+            android:id="@+id/loading_retry"
+            style="@style/Button1_blue_small"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:paddingLeft="29dp"
+            android:paddingRight="29dp"
+            android:layout_marginTop="30dp"
+            android:minWidth="@dimen/button1_with_small"
+            android:text="@string/network_service_bad" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/layout_custom_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</FrameLayout>

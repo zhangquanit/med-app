@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tips_logout" formatted="false">您的账号于%s在一台%s设备登录</string>
+    <string name="image_save_addr">已保存到SD卡</string>
+    <string name="network_failed_please_retry">网络加载失败，点击确定重试</string>
+    <string name="image_save_already_exist">你的图片已经存在于目录</string>
+    <string name="server_error">服务器开小差了</string>
+</resources>

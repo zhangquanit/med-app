@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="med_env_switch">环境切换</string>
+    <string name="med_api_name">APP抓包</string>
+    <string name="med_all_switch">总开关</string>
+    <string name="med_online">线上Env</string>
+    <string name="med_qa">测试Env</string>
+    <string name="med_dev">开发Env</string>
+    <string name="med_default">默认Env</string>
+    <string name="med_custom">自定义Env</string>
+    <string name="input_env_hint">请输入自定义env</string>
+    <string name="med_api">最近自定义env</string>
+    <string name="use">使用</string>
+    <string name="capture">请求抓包</string>
+    <string name="whiteList">白名单</string>
+    <string name="clear_list">清理列表</string>
+    <string name="request">请求体</string>
+    <string name="response">响应体</string>
+    <string name="test">{\n
+    \t"errcode": 0, \n
+    \t"errmsg": "success", \n
+    \t"data": { \n
+        \t"userId": 71152240, \n
+        \t"sessionId": "71152240__EvgnV3g3DA6TjwzALdYylrxkSJHZ1t4odBzFWEHl2nL9Myhc5XM8uUVmek4YtRK1", \n
+        \t"isRegister": 0 \n
+    \t} \n
+}</string>
+
+    <string name="lane">泳道</string>
+    <string name="arouter">路由跳转</string>
+</resources>

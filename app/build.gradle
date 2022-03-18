@@ -1,0 +1,12 @@
+apply from: "$rootDir/configs/app.gradle"
+apply from: "dev.gradle"
+
+dependencies {
+    /**
+     *  线上组件
+     *  1、添加  onlineImplementation project（"xxx"）
+     *  2、切换app到onlineDebug/onlineRelease执行
+     */
+    onlineImplementation project(":modules:ModuleMain")
+
+}

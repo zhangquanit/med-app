@@ -1,0 +1,3 @@
+rootProject.name = "lib-medplayer"
+include ':app'
+include ':LibVideoPlayer'

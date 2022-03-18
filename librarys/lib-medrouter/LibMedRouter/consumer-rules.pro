@@ -1,0 +1,2 @@
+-keep class com.medlinker.router.router.**{*;}
+-keep class * extends com.medlinker.router.router.BaseMedRouterMapping { *; }

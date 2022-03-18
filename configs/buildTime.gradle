@@ -1,0 +1,65 @@
+Map<String, Long> costTime = new LinkedHashMap<>()
+def startTime = 0
+
+//用 TaskExecutionListener 来监听整个构建过程中 task 的执行：
+gradle.addListener(new TaskExecutionListener() {
+    @Override
+    void beforeExecute(Task task) {
+        if (startTime == 0) {
+            startTime = System.currentTimeMillis()
+        }
+        costTime.put(task.getPath(), System.currentTimeMillis())
+    }
+
+    @Override
+    void afterExecute(Task task, TaskState taskState) {
+        long spend = System.currentTimeMillis() - costTime.get(task.getPath())
+        costTime.put(task.getPath(), spend)
+
+
+    }
+})
+//用 BuildListener 来监听整个构建是否完成
+gradle.addBuildListener(new BuildListener() {
+    @Override
+    void buildStarted(Gradle gradle) {
+        println "BuildListener buildStarted"
+    }
+
+    @Override
+    void settingsEvaluated(Settings settings) {
+        println "BuildListener settingsEvaluated"
+    }
+
+    @Override
+    void projectsLoaded(Gradle gradle) {
+        println "BuildListener projectsLoaded"
+    }
+
+    @Override
+    void projectsEvaluated(Gradle gradle) {
+        println "BuildListener projectsEvaluated"
+    }
+
+    @Override
+    void buildFinished(BuildResult buildResult) {
+        println "BuildListener buildFinished"
+
+        long total = System.currentTimeMillis() - startTime
+        long taskTotal = 0;
+        for (Map.Entry<String, Long> entry : costTime.entrySet()) {
+            String path = entry.getKey()
+            long spend = entry.getValue()
+            taskTotal += spend
+            if (spend > 1000) {
+                println("  " + path + "->" + spend + "ms")
+            }
+        }
+        if(startTime>0){
+            float minute = total / 1000 / 60.0f
+            String str1 = String.format("%.1f", minute)
+            println("    total cost:$total ms， 合计：$str1 分钟")
+        }
+        startTime = 0
+    }
+})

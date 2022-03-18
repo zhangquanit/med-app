@@ -1,0 +1,13 @@
+apply from: "$rootDir/config/lib.gradle"
+
+apply from: "$rootDir/config/push.gradle"
+
+dependencies {
+    implementation deps.dokitx
+    implementation deps.retrofitMed
+    implementation deps.annotation
+    implementation deps.appcompat
+    implementation deps.vlayout
+    implementation deps.swiperefreshlayout
+    implementation deps.medrouter
+}

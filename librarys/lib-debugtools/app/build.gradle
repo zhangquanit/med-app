@@ -1,0 +1,14 @@
+apply from: "$rootDir/config/app.gradle"
+
+dependencies {
+    implementation project(':LibDebugTools')
+    // 请不要在主工程使用，防止使用了该库资源和代码
+    implementation deps.dokitx
+    implementation deps.ankoCommons
+
+    implementation deps.retrofitMed
+
+    implementation deps.dokitx
+}
+
+apply from: "$rootDir/config/dt.gradle"

@@ -1,0 +1,4 @@
+rootProject.name = "LogReport"
+include ':app'
+include ':LogReport'
+include ':okhttp'

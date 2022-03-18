@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?><!--右边带消息的图标 -->
+<!--标题右边的图片（如：客服标题右边的 在线状态蓝点）-->
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_iv_center_state"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:src="@mipmap/navigation_message_gray" />

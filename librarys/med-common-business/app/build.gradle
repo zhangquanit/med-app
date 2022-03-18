@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.medlinker.app.business"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//            }
+//        }
+    }
+
+    signingConfigs {
+        release {
+            // storeFile 出于安全考虑，将签名信息放到文件中。
+            File propFile = file('signing.properties')
+            if (propFile.exists()) {
+                Properties props = new Properties()
+                props.load(new FileInputStream(propFile))
+                if (props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+                        props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
+                    android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+                    android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+                    android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+                    android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+                } else {
+                    android.buildTypes.release.signingConfig = null
+                }
+            } else {
+                android.buildTypes.release.signingConfig = null
+            }
+
+        }
+        //android studio4.0 signingConfig里面不能出现 debug 否则创建activity失败
+        testDebug {
+            storeFile file("../medlinker.keystore")
+            keyAlias 'medlinker'
+            keyPassword 'medlinker'
+            storePassword 'medlinker'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+//    //aRouter
+//    implementation rootProject.ext.dependencies["arouter"]
+//    kapt rootProject.ext.dependencies["arouter-compiler"]
+//    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+
+    implementation rootProject.ext.dependencies["med-base"]
+    api project(":ModuleVideoCall")
+}

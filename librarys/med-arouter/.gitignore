@@ -1,0 +1,14 @@
+/*/build
+/*/*/build
+/.idea
+/.gradle
+/*.iml
+/*/*.iml
+/*/*/*.iml
+/*/*/bin
+/.project
+/local.properties
+/build
+.DS_Store
+
+

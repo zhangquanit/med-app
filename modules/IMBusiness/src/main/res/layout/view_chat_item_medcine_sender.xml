@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/chat_to_bo_pading"
+        android:paddingBottom="@dimen/chat_to_bo_pading">
+
+        <include
+            android:id="@+id/v_status"
+            layout="@layout/view_chat_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_125"
+            android:layout_marginStart="@dimen/dp_10" />
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:layout_toEndOf="@id/v_status"
+            android:background="@drawable/shape_rectangular_corner_10"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_16"
+            android:paddingTop="@dimen/dp_17"
+            android:paddingEnd="@dimen/dp_16">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center_vertical"
+                    android:text="@string/title_prescription"
+                    android:textColor="#ff4848"
+                    android:textSize="@dimen/sp_22" />
+
+                <TextView
+                    android:id="@+id/tv_pre_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|top"
+                    android:textColor="@color/c_8f8f98"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="处方编号：18273827" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_pre_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_7"
+                android:textColor="@color/c_8f8f98"
+                android:textSize="@dimen/sp_13"
+                tools:text="诊断：2b型乙肝" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_12"
+                android:background="@color/c_e2e7f1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_rp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:layout_marginRight="@dimen/dp_11"
+                    android:text="Rp"
+                    android:textColor="#ff4848"
+                    android:textSize="@dimen/sp_16" />
+
+                <LinearLayout
+                    android:id="@+id/ll_medicine_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:layout_marginTop="@dimen/dp_17"
+                android:background="@color/c_e2e7f1" />
+
+            <TextView
+                android:id="@+id/btn_detail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:gravity="center"
+                android:textColor="@color/c_007AFF"
+                android:textSize="@dimen/sp_14"
+                tools:text="点击查看处方详情" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,3 @@
+include ':LibAbtest'
+include ':app'
+rootProject.name = "lib-abtest"

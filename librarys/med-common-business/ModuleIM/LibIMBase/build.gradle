@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+apply plugin: 'realm-android'
+apply from: 'maven-push.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//            }
+//        }
+        consumerProguardFiles "proguard-rules.pro"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java', 'src/main/aidl']
+            resources.srcDirs = ['src/main/java', 'src/main/aidl']
+            aidl.srcDirs = ['src/main/aidl']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'com.medlinker.record:record-mp3:0.0.1-SNAPSHOT'
+    api files('libs/protobuf-java-3.1.0.jar')
+    implementation rootProject.ext.dependencies["appcompat"]
+    implementation rootProject.ext.dependencies["logger"]
+    implementation rootProject.ext.dependencies["gson"]
+//    //aRouter
+//    implementation rootProject.ext.dependencies["arouter"]
+//    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    //rx--2.x
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["med-util"]
+    implementation rootProject.ext.dependencies["med-log"]
+
+    implementation rootProject.ext.dependencies["filedownloader"]
+    implementation(rootProject.ext.dependencies["filedownloader-okhttp"]) {
+        exclude module: 'okhttp'
+        exclude group: 'com.liulishuo.okdownload', module: 'library'
+    }
+
+}

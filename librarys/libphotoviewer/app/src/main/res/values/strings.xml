@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PhotoViewer</string>
+    <string name="reload">重新加载</string>
+    <string name="delete">删除</string>
+</resources>

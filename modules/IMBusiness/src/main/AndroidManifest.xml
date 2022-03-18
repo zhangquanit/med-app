@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.medlinker.imbusiness">
+
+    <!-- im 消息权限声明 -->
+    <permission
+        android:name="android.intent.permission.im.${applicationId}_receiver_permission"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="android.intent.permission.im.${applicationId}_receiver_permission" />
+    <!-- im 消息service权限声明 -->
+    <permission
+        android:name="${applicationId}.permission.ImService"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="${applicationId}.permission.ImService" />
+
+    <application>
+        <!-- 医联im start -->
+        <service
+            android:name="net.medlinker.im.im.core.ImService"
+            android:exported="true"
+            android:permission="${applicationId}.permission.ImService"
+            android:process=":imremote" />
+        <service
+            android:name="net.medlinker.im.im.core.ImService$GrayInnerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":imremote" />
+
+        <receiver
+            android:name="net.medlinker.im.im.MedImReceiver"
+            android:exported="true"
+            android:permission="android.intent.permission.im.${applicationId}_receiver_permission">
+            <intent-filter>
+                <action android:name="android.intent.action.im.receiver_action.${applicationId}" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <!-- 医联im end -->
+
+        <activity
+            android:name=".ui.ChatSessionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+
+</manifest>

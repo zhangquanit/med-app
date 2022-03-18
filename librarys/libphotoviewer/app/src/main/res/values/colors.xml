@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="font_color_e2e7f1">#e2e7f1</color>
+    <dimen name="font_size_48">16sp</dimen>
+    <color name="c_e2e7f1">#e2e7f1</color>
+    <color name="font_color_007eff_alpha50">#80007eff</color>
+    <color name="font_color_c6c6c6">#c6c6c6</color>
+    <color name="font_color_007eff">#0064ff</color>
+    <color name="font_color_777777_alpha50">#80777777</color>
+    <color name="font_color_777777">#777777</color>
+    <color name="font_color_0064ff">#0064ff</color>
+    <color name="transparent">#00000000</color>
+    <color name="c_0064ff">#0064ff</color>
+    <color name="color_F9FAFC">#F9FAFC</color>
+    <color name="color_e2e7f1">#e2e7f1</color>
+    <color name="color_9a9aa4">#9a9aa4</color>
+    <color name="color_454553">#454553</color>
+    <color name="color_0064FF">#0064FF</color>
+    <color name="color_f9fafc">#f9fafc</color>
+    <color name="color_F35656">#F35656</color>
+    <color name="color_1E8AFF">#1E8AFF</color>
+    <!--弹出框背景-蒙层60%黑色透明-->
+    <color name="translucence">#99000000</color>
+    <color name="font_color_454454">#454454</color>
+    <color name="color_2a2a2a">#2A2A2A</color>
+    <color name="color_edf0f0">#EDF0F0</color>
+
+    <color name="common_blue_bg">#007EFF</color>
+    <color name="font_color_007eff_real">#007eff</color>
+</resources>

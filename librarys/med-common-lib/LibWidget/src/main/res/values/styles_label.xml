@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--CommonLabel作为标签-->
+
+    <!-- ~~~~~~~~~~~~~~~ 标签 ~~~~~~~~~~~~~~~-->
+    <!--~~~~~~~ 无框标签 ~~~~~~~-->
+    <!--灰色标签-->
+    <style name="Label_gray_super_big" parent="Label_size_super_big">
+        <item name="solidColor">@color/label_gray</item>
+        <item name="android:textColor">@color/ui_black2</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <style name="Label_gray_big" parent="Label_size_big">
+        <item name="solidColor">@color/label_gray</item>
+        <item name="android:textColor">@color/ui_black2</item>
+        <item name="strokeWidth">0dp</item>
+    </style>
+
+    <!--~~~~~~~ 框标签 ~~~~~~~-->
+    <!--蓝框标签-->
+    <style name="Label_border_blue_super_big" parent="Label_size_super_big">
+        <item name="solidColor">@color/label_border_blue_solid</item>
+        <item name="strokeColor">@color/label_border_blue_stroke</item>
+        <item name="android:textColor">@color/ui_blue</item>
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+    </style>
+
+    <style name="Label_border_blue_big" parent="Label_size_big">
+        <item name="solidColor">@color/label_border_blue_solid</item>
+        <item name="strokeColor">@color/label_border_blue_stroke</item>
+        <item name="android:textColor">@color/ui_blue</item>
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+    </style>
+
+
+    <!-- ~~~~~~~~~~~~基础~~~~~~~~~~~~~ -->
+    <style name="Label_width_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--高度分四个等级，宽度默认四个等级（默认可再设置layout_width覆盖style中属性） -->
+
+    <!--特大标签样式 高32dp,宽默认111dp-->
+    <style name="Label_size_super_big" parent="Label_width_wrap">
+        <item name="android:layout_height">@dimen/label_height_super_big</item>
+        <item name="android:layout_width">@dimen/label_width_super_big</item>
+        <item name="android:textSize">@dimen/label_txt_size_super_big</item>
+        <item name="selfRadius">@dimen/label_radius_super_big</item>
+    </style>
+
+    <!--大标签样式 高30dp,宽默认84dp-->
+    <style name="Label_size_big" parent="Label_width_wrap">
+        <item name="android:layout_height">@dimen/label_height_big</item>
+        <item name="android:layout_width">@dimen/label_width_big</item>
+        <item name="android:textSize">@dimen/label_txt_size_big</item>
+        <item name="selfRadius">@dimen/label_radius_big</item>
+    </style>
+
+
+</resources>

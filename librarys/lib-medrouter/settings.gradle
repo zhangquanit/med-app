@@ -1,0 +1,5 @@
+include ':Model2'
+include ':Model1'
+include ':LibMedRouter'
+include ':app'
+rootProject.name = "LibMedRouter"

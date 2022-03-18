@@ -1,0 +1,33 @@
+
+/**
+ * 根据配置动态include module
+ * 1、将你想依赖的源码module的status=1
+ */
+List gitList = medLibConfigs.findAll().asList()
+int size = gitList.size()
+for (int i = 0; i < size; i++) {
+    Map map = gitList.get(i)["value"]
+    Object modules = map.get("modules")
+    if (modules instanceof Map) {
+        if (medLibIncludeAll || modules.get("status") == 1) {
+            String moduleName = modules.get("module")
+            if (null != moduleName && "" != moduleName) {
+                include ":${medLibDir}:${moduleName}"
+                println("include :${medLibDir}:${moduleName}")
+            }
+        }
+    } else {
+        List<Map> moduleList = modules
+        for (int j = 0; j < moduleList.size(); j++) {
+            Map item = moduleList.get(j)
+            if (medLibIncludeAll || item.get("status") == 1) {
+                String moduleName = item.get("module")
+                if (null != moduleName && "" != moduleName) {
+                    include ":${medLibDir}:${moduleName}"
+                    println("include :${medLibDir}:${moduleName}")
+                }
+            }
+        }
+    }
+}
+

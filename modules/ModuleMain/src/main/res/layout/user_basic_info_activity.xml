@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.medlinker.baseapp.widget.MedViewPager
+        android:id="@+id/viewPager"
+        android:layout_marginTop="@dimen/dp_90"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <com.medlinker.widget.shape.ShapeTextView
+        android:id="@+id/tv_next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/sp_18"
+        app:sp_radius="@dimen/dp_22"
+        app:sp_solid="#9487EA " />
+</RelativeLayout>

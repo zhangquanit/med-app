@@ -1,0 +1,3 @@
+-keep class com.medlinker.dt.** {*;}
+-keep class com.medlinker.debugtools.** {*;}
+-keep class com.didichuxing.doraemonkit.** {*;}

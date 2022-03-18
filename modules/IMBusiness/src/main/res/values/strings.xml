@@ -1,0 +1,22 @@
+<resources>
+    <string name="em_default_text">"默认表情"</string>
+    <string name="em_a_text">"医联表情"</string>
+    <string name="group_tips_all">\@所有人\n%s</string>
+
+    <string name="title_prescription">处方详情</string>
+    <string name="pre_type">诊断：%s</string>
+    <string name="pre_no">处方编号：%s</string>
+    <string name="toast_prescription_data_error">处方数据格式错误</string>
+    <string name="title_continued_apply">复诊开药</string>
+    <string name="title_renewal_apply">续方申请</string>
+    <string name="text_cognitive_disorder_evaluation">认知障碍评测</string>
+    <string name="text_please_doctor_evaluation">请医生评测结果</string>
+    <string name="check_detail">查看详情</string>
+    <string name="text_modify_time">修改时间</string>
+    <string name="text_input_video_inquiry_room">进入视频问诊房间</string>
+    <string name="check_chat_type_medicine_prescription">查看处方</string>
+    <string name="txt_click_look_pre_detail">点击查看处方详情</string>
+    <string name="txt_use_medicine_advice">用药建议</string>
+    <string name="txt_drug_details">药品详情</string>
+    <string name="txt_prescribe_medicine">处方开药</string>
+</resources>

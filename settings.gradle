@@ -1,0 +1,36 @@
+
+rootProject.name = "med-app"
+include ':app'
+
+//##################library 库
+include ':LibDebugTools'
+
+//##################业务模块
+include ':modules:ModuleMain'
+include ':modules:BaseApp'
+include ':modules:Login'
+
+////################## 源码联调开发(源码依赖)
+//String devDirName = "x_dev"
+//File devDir = file(devDirName)
+//if (!devDir.exists()) {
+//    def command = """git clone https://git.medlinker.com/android/x_dev.git ${devDirName}"""
+//    def proc = command.execute()
+//    proc.waitFor()
+//    proc.destroy()
+//}
+//if (devDir.exists()) {
+//    apply from: file("${devDirName}/dev.gradle")
+//}
+////################## 脚本打包
+//def scriptDirName="x_scripts"
+//File scriptDir = file(scriptDirName)
+//if (!scriptDir.exists()) {
+//    def command = """git clone https://git.medlinker.com/android/x_scripts.git ${scriptDirName}"""
+//    def proc = command.execute()
+//    proc.waitFor()
+//    proc.destroy()
+//}
+//if (scriptDir.exists()) {
+//    apply from: file("${scriptDirName}/dev.gradle")
+//}

@@ -1,0 +1,3 @@
+rootProject.name = "lib-filedownloader"
+include ':app'
+include ':filedownloader'

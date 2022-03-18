@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/input_edit_height"
+    android:background="@drawable/input_edit_bg"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/input_edit_space_h"
+    android:paddingRight="@dimen/input_edit_space_h">
+
+    <com.medlinker.widget.input.InputSafeEditText
+        android:id="@+id/password_edit_view"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_gravity="center_vertical"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:maxLines="1"
+        android:paddingTop="@dimen/input_edit_space_v"
+        android:paddingBottom="@dimen/input_edit_space_v"
+        android:textColor="@color/search_text_color"
+        android:textColorHint="@color/search_text_color_hint"
+        android:textCursorDrawable="@drawable/search_input_cursor"
+        android:textSize="@dimen/input_text_size"
+        tools:hint="输入您的内容" />
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="@dimen/search_icon_size"
+        android:layout_height="@dimen/search_icon_size"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/search_delete_gray"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/password_assist_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/input_edit_space_h"
+        android:paddingTop="@dimen/input_edit_space_v"
+        android:paddingBottom="@dimen/input_edit_space_v"
+        android:textColor="@color/ui_blue"
+        android:textSize="@dimen/input_get_code_text_size"
+        android:text="获取验证码"
+        tools:visibility="visible"
+        />
+
+</LinearLayout>

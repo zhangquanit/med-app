@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- <net.medlinker.main.widget.HomeTabIconView
+         android:id="@+id/iv_main_tab_icon"
+         android:layout_width="@dimen/dp_24"
+         android:layout_height="@dimen/dp_24"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="@dimen/dp_4" />-->
+    <ImageView
+        android:id="@+id/iv_main_tab_icon"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_4" />
+
+    <net.medlinker.main.widget.HomeTabTextView
+        android:id="@+id/tv_main_tab_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_main_tab_icon"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_color_main_tab_selector"
+        android:textSize="@dimen/sp_11" />
+
+
+    <com.medlinker.base.widget.badgeview.BadgeView
+        android:id="@+id/bv_main_tab_unread"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-10dp"
+        android:layout_toEndOf="@id/iv_main_tab_icon"
+        app:badgePadding="@dimen/dp_1"
+        app:badgeTextSize="@dimen/sp_11"
+        app:badge_Style="circle" />
+</RelativeLayout>

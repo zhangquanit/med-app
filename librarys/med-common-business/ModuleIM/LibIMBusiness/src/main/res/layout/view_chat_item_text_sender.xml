@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/chat_to_bo_pading"
+        android:paddingTop="@dimen/chat_to_bo_pading">
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_avatar"
+            android:layout_toStartOf="@+id/iv_avatar"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/iv_loading"
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:indeterminate="false"
+                android:indeterminateDrawable="@drawable/msg_chat_loading" />
+
+            <ImageView
+                android:id="@+id/iv_failure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/dp_8"
+                android:src="@mipmap/msg_chat_status_failure" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_chat_blue"
+                android:gravity="center_vertical|start"
+                android:lineSpacingMultiplier="1.1"
+                android:maxWidth="@dimen/dp_263"
+                android:paddingLeft="@dimen/dp_14"
+                android:paddingRight="@dimen/dp_14"
+                android:paddingTop="@dimen/dp_11"
+                android:paddingBottom="@dimen/dp_11"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_15"
+                tools:text="快递费吉林省家乐福第三方老师就废了" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/chat_user_head_size"
+            android:layout_height="@dimen/chat_user_head_size"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/chat_msg_head_margin"
+            android:layout_marginRight="@dimen/chat_pading" />
+    </RelativeLayout>
+</LinearLayout>

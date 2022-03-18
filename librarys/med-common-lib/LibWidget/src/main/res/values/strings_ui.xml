@@ -1,0 +1,17 @@
+<resources>
+    <!-- ~~~~~~~~~~~~搜索框,默认值~~~~~~~~~~~~~ -->
+    <string name="search_hint_default">输入您的内容</string>
+    <string name="search_ui_do">搜索</string>
+    <string name="search_ui_cancel">取消</string>
+    <!-- ~~~~~~~~~~~~Dialog框,默认值~~~~~~~~~~~~~ -->
+    <string name="dialog_cancel_default">取消</string>
+    <string name="dialog_confirm_default">确认</string>
+    <string name="dialog_title_default">提示</string>
+    <string name="dialog_title_date_default">请选择日期</string>
+    <string name="dialog_title_tip_default">温馨提示</string>
+
+    <string name="network_not_avliable">无网络</string>
+    <string name="network_service_bad">重新加载</string>
+    <string name="widget_loadingview_empty">没有数据</string>
+    <string name="network_not_connected_tip">加载失败，请检查网络连接</string>
+</resources>

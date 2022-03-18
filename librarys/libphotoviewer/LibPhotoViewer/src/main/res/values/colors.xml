@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <dimen name="font_size_48">16sp</dimen>
+    <color name="font_color_777777">#777777</color>
+    <color name="font_color_f2f2f2">#f2f2f2</color>
+    <!--弹出框背景-蒙层60%黑色透明-->
+    <color name="color_edf0f0">#EDF0F0</color>
+    <color name="font_color_007eff_alpha50">#80007eff</color>
+    <color name="font_color_c6c6c6">#c6c6c6</color>
+    <color name="color_1E8AFF">#1E8AFF</color>
+
+</resources>

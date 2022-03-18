@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2a2c31"
+    android:orientation="vertical">
+
+
+   <com.medlinker.lib.imagepicker.widget.ViewPagerFixed
+       android:id="@+id/vp_photos"
+       android:requiresFadingEdge="none"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:fadingEdge="none"
+       android:background="#2a2c31" />
+
+   <ImageView
+       android:id="@+id/v_selected"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentTop="true"
+       android:layout_marginRight="20dp"
+       android:layout_marginTop="20dp"
+       android:clickable="true"
+       android:src="@drawable/pick_album_photo_checkbox_bg" />
+
+   <FrameLayout
+       android:id="@+id/ll_original_img"
+       android:layout_width="match_parent"
+       android:layout_height="48dp"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentRight="true"
+       android:background="#33000000"
+       android:visibility="gone">
+
+      <CheckBox
+          android:id="@+id/cb_select_original_img"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_gravity="center_vertical|right"
+          android:button="@null"
+          android:checked="false"
+          android:drawableLeft="@drawable/pick_original_image_selector"
+          android:drawablePadding="10dp"
+          android:gravity="center_vertical"
+          android:text="@string/pick_msg_original_img"
+          android:textColor="@color/white"
+          android:textSize="@dimen/font_size_42" />
+   </FrameLayout>
+
+
+</RelativeLayout>

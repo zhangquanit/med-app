@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tab_bg2_oval_selected" />
+            <corners android:radius="@dimen/Tab_bg2_radius" />
+            <!--<padding
+                android:top="8dp"
+                android:bottom="8dp"
+                android:left="30dp"
+                android:right="30dp"
+                />-->
+            <size  android:height="@dimen/Tab_bg2_height" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/tab_bg2_oval_unselected" />
+            <corners android:radius="@dimen/Tab_bg2_radius" />
+            <!--<padding
+                android:top="8dp"
+                android:bottom="8dp"
+                android:left="30dp"
+                android:right="30dp"
+                />-->
+            <size  android:height="@dimen/Tab_bg2_height" />
+        </shape>
+    </item>
+
+</selector>

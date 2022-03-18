@@ -1,0 +1,208 @@
+/**
+ * 执行命令
+ */
+def static execShellCmd(String cmd) {
+    println("执行命令：" + cmd)
+    def proc = null
+    BufferedReader br = null
+    try {
+        proc = cmd.execute()
+        br = new BufferedReader(new InputStreamReader(proc.inputStream))
+        String line = null
+        while ((line = br.readLine()) != null) {
+            println(line)
+        }
+        br.close()
+        proc.waitFor()
+    } finally {
+        try {
+            if (null != br) br.close()
+        } catch (Exception e) {
+
+        }
+        try {
+            if (null != proc) proc.destroy()
+        } catch (Exception e) {
+
+        }
+    }
+}
+
+def execPullRequest = false
+def requests = gradle.getStartParameter().getTaskRequests()
+requests.forEach {
+    if (null != it.args) {
+        it.args.forEach({ arg ->
+            if (arg.contains("clean")) {
+                execPullRequest = true
+            }
+        })
+    }
+}
+//更新x_dev仓库
+if(execPullRequest) {
+    def x_dev_git = new File(rootDir, "x_dev").getAbsolutePath() + File.separator + ".git"
+    def commandLine = "git --git-dir=$x_dev_git pull"
+    execShellCmd(commandLine)
+}
+
+//##################  通用依赖库
+def libGradleFile = file("libscript/dev_libs.gradle")
+if (libGradleFile.exists()) {
+    apply from: libGradleFile
+}
+
+class ConfigFileChecker {
+    File testDir
+    File logFile
+
+    ConfigFileChecker(File testDir) {
+        this.testDir = testDir
+        this.logFile = new File(testDir, ".log")
+    }
+
+    void copy(File source, File dst) {
+        FileInputStream br = new FileInputStream(source)
+        FileOutputStream fos = new FileOutputStream(dst)
+        int len = 0
+        byte[] buffer = new byte[1024];
+        while ((len = br.read(buffer)) != -1) {
+            fos.write(buffer, 0, len)
+        }
+        fos.flush()
+        fos.close()
+        br.close()
+
+        saveLog(source)
+    }
+
+    void saveLog(File source) {
+        if (null == source) return
+        String data = source.length().toString()
+        FileOutputStream os = new FileOutputStream(logFile)
+        os.write(data.getBytes())
+        os.flush()
+        os.close()
+    }
+
+    String getLog() {
+        if (!logFile.exists()) return null
+        FileInputStream is = new FileInputStream(logFile)
+        byte[] buffer = new byte[1024]
+        is.read(buffer)
+        is.close()
+        String data = new String(buffer, 0, buffer.length)
+        return data
+    }
+
+    void check(File sourceFile, File testGradle) {
+        if (testGradle.exists()) {
+            String log = getLog()
+            if (null == log || log.toLong() != sourceFile.length()) {
+                println("${sourceFile}发生改变\n重新拷贝到 ${testGradle}")
+                testGradle.delete()
+                copy(sourceFile, testGradle)
+            }
+        } else {
+            copy(sourceFile, testGradle)
+        }
+    }
+}
+
+println()
+println("################################ 源码依赖检查 START #############################")
+
+println("################### 检查x_dev/test私有目录")
+File testDir = file("test")
+if (!testDir.exists()) {
+    testDir.mkdirs()
+}
+
+File sourceFile = file("config.gradle")
+File testGradle = new File(testDir, "config.gradle")
+new ConfigFileChecker(testDir).check(sourceFile, testGradle)
+
+apply from: testGradle
+
+//检查
+if (!medLibCloneAll) {
+    File libsDir = new File(rootProject.projectDir, "librarys")
+    if (libsDir.exists()) {
+//        println("medLibCloneAll=false 删除librarys目录")
+//        String command = """rm -rf ${libsDir.path}"""
+//        def proc = command.execute()
+//        proc.waitFor()
+    }
+
+    return
+}
+
+
+Collection coll = medLibConfigs.findAll()
+int gitCount = coll.asList().size()
+println("总共：" + gitCount + "个组件仓库")
+
+println("################### Clone组件库")
+apply from: file("git_clone.gradle")
+
+
+File libsDir = new File(rootProject.projectDir, "librarys")
+if (!libsDir.exists()) {
+    return
+}
+
+/**
+ *   ################ 源码联调开发 ################
+ * 1、正式打包命令 ./gradlew clean assembleOnlineRelease -PhostType=3
+ * 2、如果打包命令包含assembleOnlineRelease 或者hostType=3  不会依赖开发module
+ */
+
+def releaseCmd = false
+def startParameter = gradle.getStartParameter()
+def gradleProperties = startParameter.getProjectProperties()
+for (Map.Entry<String, String> entry : gradleProperties.entrySet()) {
+    if (entry.getKey() == "hostType" && entry.getValue() == "3") {
+        releaseCmd = true
+        break
+    }
+}
+if (releaseCmd) {
+    println()
+    println("打包命令包含hostType=3 不必包含开发module")
+    return
+}
+
+//def taskRequests = startParameter.getTaskRequests()
+//for (int i = 0; i < taskRequests.size(); i++) {
+//    def item = taskRequests.get(i)
+//    def args = item.args
+//    for (int j = 0; j < args.size(); j++) {
+//        if (args[j] == "assembleOnlineRelease") {
+//            releaseCmd = true
+//            break
+//        }
+//    }
+//}
+//if (releaseCmd) {
+//    println("打包命令包含assembleOnlineRelease 不必包含开发module")
+//    return
+//}
+
+println("################### 动态include module")
+apply from: file("module_include.gradle")
+
+gradle.addProjectEvaluationListener(new ProjectEvaluationListener() {
+    @Override
+    void beforeEvaluate(Project project) {
+        if (project.getPath() == rootProject.getPath()) {
+            project.apply from: file("build_source.gradle")
+        }
+    }
+
+    @Override
+    void afterEvaluate(Project project, ProjectState projectState) {
+
+    }
+})
+println("################################ 源码依赖检查 END ###############################")
+println()

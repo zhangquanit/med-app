@@ -1,0 +1,10 @@
+/makeApk/*.pyc
+/makeApk/__pycache__
+/makeApk/.DS_Store
+/makeChannels/.DS_Store
+/makeChannels/*.pyc
+/makeChannels/__pycache__
+/makeChannels/apk
+/makeChannels/apk-jiagu
+/makeChannels/channels
+

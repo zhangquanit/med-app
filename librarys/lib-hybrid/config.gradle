@@ -1,0 +1,26 @@
+ext {
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 19,
+            targetSdkVersion : 26,
+    ]
+
+    versions = [
+            retrofitVersion   : "2.9.0",
+            rxlifecycleVersion: "3.1.0",
+    ]
+
+    dependencies = [
+            //router
+            "arouter"               : "com.alibaba:arouter-api:1.4.1",
+            "arouter-compiler"      : "com.alibaba:arouter-compiler:1.2.2",
+            "rxlifecycle-components": "com.trello.rxlifecycle3:rxlifecycle-components:${versions["rxlifecycleVersion"]}",
+            "tbs"                   : "com.tencent.tbs:tbssdk:44085",
+            "retrofit"              : "com.squareup.retrofit2:retrofit:${versions["retrofitVersion"]}",
+            "med-permission"        : "com.medlinker:LibPermission:1.2.5",
+            "med-bridge"            : "com.medlinker.bridge:bridge:0.0.24",
+            "med-hybrid-core"       : "com.medlinker.bridge:hybrid-core:0.0.24",
+    ]
+
+}

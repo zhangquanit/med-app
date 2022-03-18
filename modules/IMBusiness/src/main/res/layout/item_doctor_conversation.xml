@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.medlinker.widget.shape.ShapeRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp_12"
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginEnd="@dimen/dp_12"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_16"
+    app:sp_radius="@dimen/dp_10"
+    app:sp_solid="@android:color/white">
+
+
+    <FrameLayout
+        android:id="@+id/layout_head"
+        android:layout_width="@dimen/dp_54"
+        android:layout_height="@dimen/dp_54"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_12">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="@dimen/dp_54"
+            android:layout_height="@dimen/dp_54"
+            tools:src="@drawable/ic_patient_default" />
+
+        <com.medlinker.base.widget.badgeview.BadgeView
+            android:id="@+id/bv_unread"
+            android:layout_width="@dimen/dp_17"
+            android:layout_height="@dimen/dp_17"
+            android:layout_gravity="end"
+            app:badgeText="0"
+            app:badge_Style="circle" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/layout_head"
+        android:layout_marginEnd="@dimen/dp_6"
+        android:layout_toEndOf="@id/layout_head"
+        android:maxLength="6"
+        android:textColor="#2A2A2A"
+        android:textSize="@dimen/sp_17"
+        tools:text="姓名" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_job_title"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:textColor="#9A9A9A"
+        android:textSize="@dimen/sp_14"
+        tools:text="2021.01.01" />
+
+    <TextView
+        android:id="@+id/tv_job_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_user_name"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_toStartOf="@id/tv_time"
+        android:layout_toEndOf="@id/tv_user_name"
+        android:singleLine="true"
+        android:textColor="#2A2A2A"
+        android:textSize="@dimen/sp_14"
+        tools:text="主治医师主治医师主治医师主治医师主治医师主治医师" />
+
+    <com.medlinker.widget.shape.ShapeTextView
+        android:id="@+id/tv_order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:paddingStart="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_2"
+        android:paddingEnd="@dimen/dp_8"
+        android:paddingBottom="@dimen/dp_2"
+        android:text="套餐使用中"
+        android:textColor="#FFA730"
+        android:textSize="@dimen/sp_12"
+        android:visibility="gone"
+        app:sp_bottomLeftRadius="@dimen/dp_10"
+        app:sp_solid="#FFF6EA"
+        app:sp_topRightRadius="@dimen/dp_10"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_hospital_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_user_name"
+        android:layout_alignStart="@id/tv_user_name"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:singleLine="true"
+        android:textColor="#2A2A2A"
+        android:textSize="@dimen/sp_14"
+        tools:text="北京大学第一医院 ｜妇科" />
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_hospital_info"
+        android:layout_alignStart="@id/tv_user_name"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:singleLine="true"
+        android:textColor="#9A9A9A"
+        android:textSize="@dimen/sp_14"
+        tools:text="消息" />
+
+</com.medlinker.widget.shape.ShapeRelativeLayout>

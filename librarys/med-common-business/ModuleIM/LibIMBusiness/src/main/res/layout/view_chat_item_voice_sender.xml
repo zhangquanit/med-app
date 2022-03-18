@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/chat_to_bo_pading"
+        android:paddingTop="@dimen/chat_to_bo_pading">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/chat_user_head_size"
+            android:layout_height="@dimen/chat_user_head_size"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/chat_msg_head_margin"
+            android:layout_marginRight="@dimen/chat_pading" />
+
+        <FrameLayout
+            android:id="@+id/layout_content"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_40"
+            android:layout_toLeftOf="@+id/iv_avatar"
+            android:background="@drawable/shape_chat_right_blue">
+
+            <TextView
+                android:id="@+id/tv_voice_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:src="@drawable/msg_voice_play_self_3" />
+
+        </FrameLayout>
+
+        <include
+            android:id="@+id/status_layout"
+            layout="@layout/view_chat_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:layout_toLeftOf="@+id/layout_content" />
+    </RelativeLayout>
+</LinearLayout>

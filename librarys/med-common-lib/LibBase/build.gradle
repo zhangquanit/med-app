@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: 'maven-push.gradle'
+
+def config = rootProject.ext
+
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion config.android.targetSdkVersion
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], exclude: ['android-support*.jar'], dir: 'libs')
+    //kotlin
+    api config.dependencies["kotlin"]
+    api config.dependencies["kotlinx-coroutines-android"]
+    api config.dependencies["kotlinx-coroutines-core"]
+
+    //Android基础库
+    api config.dependencies["appcompat"]
+    api config.dependencies["recyclerview"]
+    api config.dependencies["cardview"]
+    api config.dependencies["material"]
+    api config.dependencies["constraintlayout"]
+    api config.dependencies["multidex"]
+    api config.dependencies["lifecycle-extensions"]
+
+    //网络库
+    api config.dependencies["med-http"]
+    api config.dependencies["med-retrofit-logreport"]
+    api config.dependencies["med-logreport-okhttp"]
+    api config.dependencies["okhttp3-logging-interceptor"]
+
+    //View组件库
+    api(config.dependencies["vlayout"]) { transitive = true }
+    api config.dependencies["smart-refresh-header"]
+    api config.dependencies["smart-refresh-kernel"]
+    api config.dependencies["android-pickerview"]
+    api config.dependencies["cymchad-adapter"]
+    api config.dependencies["roundedimageview"]
+
+    //Rx系列
+    api config.dependencies["rxjava"]
+    api config.dependencies["rxandroid"]
+    api config.dependencies["rxbinding"]
+    api config.dependencies["rxpermissions"]
+
+    //DI系列
+    api config.dependencies["butterknife"]
+    annotationProcessor config.dependencies["butterknife-apt"]
+    api config.dependencies["arouter"]
+
+    //其他
+    api config.dependencies["mmkv"]
+    api config.dependencies["eventbus"]
+    api config.dependencies["blankj"]
+
+    //自研库
+    api config.dependencies["med-widgets"]
+    api config.dependencies["med-router"]
+    api config.dependencies["med-glide"]
+    api config.dependencies["med-log"]
+    api config.dependencies["med-util"]
+
+}

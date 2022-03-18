@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_time"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dp_19"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="@dimen/dp_16"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:background="@drawable/shape_r_cbcfd9"
+    android:gravity="center"
+    android:paddingLeft="@dimen/dp_6"
+    android:paddingRight="@dimen/dp_6"
+    android:textColor="@android:color/white"
+    android:textSize="@dimen/sp_12"
+    tools:text="16：00" />
+
+

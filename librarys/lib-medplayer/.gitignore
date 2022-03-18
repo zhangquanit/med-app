@@ -1,0 +1,16 @@
+/*/build
+/*/*/build
+/.idea
+/.gradle
+/*.iml
+/*/*.iml
+/*/*/*.iml
+/*/*/bin
+/.project
+/ToolMakeChannelApk/
+/app/.bugtags.log
+/jsBundles
+/local.properties
+/build
+.DS_Store
+/scripts/__pycache__

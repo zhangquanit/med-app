@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--右边竖直的图标和文字 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_ll_right_v"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/navigation_margin_text_left_right"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:id="@+id/navigation_iv_right_v"
+        android:layout_width="@dimen/navigation_icon_size_vertical"
+        android:layout_height="@dimen/navigation_icon_size_vertical"
+        android:scaleType="centerInside"
+        tools:src="@mipmap/navigation_v_service_gray" />
+
+    <TextView
+        android:id="@+id/navigation_tv_right_v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/navigation_title_v_black"
+        android:textSize="@dimen/navigation_v_text_size"
+        tools:text="rightTextV" />
+</LinearLayout>

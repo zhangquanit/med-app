@@ -1,0 +1,120 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ui_transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dialog_confirm_margin_h"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="@dimen/dialog_confirm_margin_h"
+        android:background="@drawable/dialog_center_bg"
+        android:paddingStart="@dimen/dialog_confirm_padding_h"
+        android:paddingTop="@dimen/dialog_confirm_padding_top"
+        android:paddingEnd="@dimen/dialog_confirm_padding_h"
+        android:paddingBottom="@dimen/dialog_confirm_padding_bottom">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="温馨提示"
+            android:textColor="@color/dialog_title"
+            android:textSize="@dimen/dialog_text_size_title"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_summary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fadeScrollbars="false"
+            android:gravity="start"
+            android:maxLines="15"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbars="vertical"
+            android:textColor="@color/dialog_des"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="Des" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fadeScrollbars="false"
+            android:gravity="start"
+            android:maxLines="15"
+            android:paddingTop="@dimen/dp_10"
+            android:textColor="@color/dialog_des"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_ok"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_summary"
+            tools:text="Des" />
+
+
+        <com.medlinker.widget.shape.ShapeTextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dialog_confirm_space_button_des"
+            android:layout_marginRight="@dimen/button_space"
+            android:gravity="center"
+            android:textColor="#6A6A6A"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_ok"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            app:sp_radius="@dimen/dp_20"
+            app:sp_solid="#F1F1F1"
+            tools:text="Cancel"
+            tools:visibility="visible" />
+
+        <com.medlinker.base.widget.RoundCornerTextView
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dialog_confirm_space_button_des"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/btn_cancel"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            app:selfRadius="@dimen/dp_20"
+            app:solidColor="@android:color/darker_gray"
+            tools:text="Ok"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iv_top"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_gravity="center_horizontal"
+        android:src="#666666" />
+
+</FrameLayout>

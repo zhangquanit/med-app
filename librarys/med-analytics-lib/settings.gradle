@@ -1,0 +1,3 @@
+include ':LibAnalytics'
+include ':app'
+rootProject.name = "med-analytics-lib"

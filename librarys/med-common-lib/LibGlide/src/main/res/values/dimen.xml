@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="small_dp">30dp</dimen>
+    <dimen name="middle_dp">80dp</dimen>
+    <dimen name="big_dp">210dp</dimen>
+    <dimen name="max_dp">290dp</dimen>
+    <dimen name="banner_width">168dp</dimen>
+    <!--图标大小-->
+    <dimen name="icon_size_96">30dp</dimen>
+
+</resources>

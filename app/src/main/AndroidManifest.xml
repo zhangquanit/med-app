@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.medlinker.android">
+
+    <!-- GIO start-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- GIO end-->
+
+    <!-- bugly start -->
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <!-- bugly end -->
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application>
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.5" />
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
+        <!-- app升级-->
+        <meta-data
+            android:name="app_update_key"
+            android:value="${APP_UPDATE_KEY}" />
+        <!-- 闪验appId-->
+        <meta-data
+            android:name="sy_appId"
+            android:value="${SY_APPID}" />
+        <!-- 微信支付-->
+        <meta-data
+            android:name="WECHAT_APPID"
+            android:value="wx8888888888888888" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/common_filepaths"
+                tools:replace="android:resource" />
+        </provider>
+
+        <activity
+            android:name=".hybrid.HybridWebViewActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="net.medlinker.android.BaseApp"
+            android:value="@string/med_app_startup"  />
+
+    </application>
+
+</manifest>

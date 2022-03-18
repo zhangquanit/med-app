@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+apply from: 'maven-push.gradle'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles "proguard-rules.pro"
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//            }
+//        }
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["med-base"]
+    implementation rootProject.ext.dependencies["med-widgets"]
+    implementation rootProject.ext.dependencies["med-glide"]
+    implementation rootProject.ext.dependencies["med-util"]
+    implementation rootProject.ext.dependencies["med-permission"]
+    implementation "com.tencent.liteav:LiteAVSDK_TRTC:9.5.11171"
+//    //aRouter
+//    implementation rootProject.ext.dependencies["arouter"]
+//    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+}
+
+//maven配置
+//publishing {
+//    publications {
+//        debug(MavenPublication) {
+//            artifactId 'video-inquiry'
+//        }
+//    }
+//}

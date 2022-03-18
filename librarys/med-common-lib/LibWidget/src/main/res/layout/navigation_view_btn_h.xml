@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--右边水平的图标和文字 -->
+<LinearLayout
+    android:id="@+id/navigation_ll_right_h"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/navigation_margin_left_right"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/navigation_tv_right_h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        android:textColor="@color/navigation_text_blue_selector"
+        android:textSize="@dimen/navigation_h_text_size"
+        tools:text="rightTextH" />
+
+    <ImageView
+        android:id="@+id/navigation_iv_right_h"
+        android:layout_width="@dimen/navigation_icon_size_horizontal"
+        android:layout_height="@dimen/navigation_icon_size_horizontal"
+        android:scaleType="centerInside"
+        tools:src="@mipmap/navigation_h_change_blue" />
+</LinearLayout>

@@ -1,0 +1,37 @@
+
+if (!medLibCloneAll){
+    println("medLibCloneAll=false 不clone仓库")
+    return
+}
+
+File libDir = new File(rootProject.projectDir, medLibDir)
+if (!libDir.exists()) {
+    libDir.mkdirs()
+}
+List gitList = medLibConfigs.findAll().asList()
+int size = gitList.size()
+//Runtime runtime=Runtime.getRuntime()
+for (int i = 0; i < size; i++) {
+    Map map = gitList.get(i).getAt("value")
+    String gitClone = map.get("git")
+    String moduleName = gitClone.substring(gitClone.lastIndexOf("/") + 1, gitClone.length()).replace(".git", "")
+
+    File gitFile = new File(libDir, moduleName)
+    if (gitFile.exists()) {
+        continue
+    }
+    String cloneModule = medLibDir + "/" + moduleName
+    String cmd = new StringBuilder()
+            .append("git clone")
+            .append(" ")
+            .append(gitClone)
+            .append(" ")
+            .append(cloneModule)
+            .toString()
+    println(cmd)
+    def proc = cmd.execute()
+    proc.waitFor() //同步下载 避免第一次依赖module失败
+//    runtime.exec(cmd)
+}
+println(medLibDir + "目录下存在" + libDir.listFiles().size() + "个组件仓库")
+

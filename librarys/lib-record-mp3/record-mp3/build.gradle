@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles "consumer-rules.pro"
+        ndk {
+            abiFilters "arm64-v8a", "armeabi", "armeabi-v7a", "x86", "mips64", "mips"
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            consumerProguardFiles 'consumer-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            consumerProguardFiles 'consumer-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+}
+apply from: 'maven-push.gradle'

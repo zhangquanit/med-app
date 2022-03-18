@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medlinker.lib.imagepicker">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <application>
+        <activity android:name=".ClipImageActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ClipPhotoPickerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PhotoPagerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PhotoPagerPickerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PhotoPickerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ClipCameraActivity"
+            android:theme="@style/transparent_activity"/>
+    </application>
+</manifest>

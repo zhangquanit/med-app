@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f6f7f8"
+    android:orientation="vertical"
+    tools:context=".mine.userInfo.ModifyUserInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_55"
+            android:gravity="center_vertical"
+            android:id="@+id/rl_header"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingEnd="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="头像"
+                android:textColor="@color/ui_black2"
+                android:textSize="@dimen/sp_16" />
+
+            <ImageView
+                android:id="@+id/iv_header"
+                android:layout_width="@dimen/dp_34"
+                android:layout_height="@dimen/dp_34"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_arrow"
+                android:src="@mipmap/icon_user_head" />
+
+            <ImageView
+                android:id="@+id/iv_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_10"
+                android:src="@mipmap/ic_right_arrow" />
+        </RelativeLayout>
+
+        <com.medlinker.widget.line.UiLineView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginEnd="@dimen/dp_12" />
+
+        <RelativeLayout
+            android:id="@+id/ll_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_55"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingEnd="@dimen/dp_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="昵称(15字以内)"
+                android:textColor="@color/ui_black2"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_arrow2"
+                android:textColor="@color/ui_black1"
+                android:textSize="@dimen/sp_16"
+                tools:text="昵称" />
+
+            <ImageView
+                android:id="@+id/iv_arrow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_10"
+                android:src="@mipmap/ic_right_arrow" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.medlinker.widget.shape.ShapeTextView
+        android:id="@+id/btn_save_modify"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:gravity="center"
+        android:text="@string/save_modify"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:textSize="@dimen/sp_16"
+        android:layout_alignParentBottom="true"
+        app:sp_radius="@dimen/dp_22"
+        app:sp_solid="#9487EA" />
+
+</RelativeLayout>

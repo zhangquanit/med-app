@@ -1,0 +1,85 @@
+def publishArchivesType = 0
+//String repositoryUrl = "file://localhost$rootDir/repo"
+
+def pluginVersionName = VERSION_PLUGIN_NAME
+def gid = POM_PLUGIN_GROUP_ID
+def pn = POM_PLUGIN_ARTIFACT_ID
+
+apply plugin: 'maven'
+//支持对库文件数字签名的插件，可以通过签名知道文件的创建者，创建时间等信息
+apply plugin: 'signing'
+
+//从项目gradle.properties中读取Nexus服务器登录用户名
+def getRepositoryUserName() {
+    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+//读取Nexus服务器登录密码
+def getRepositoryPassword() {
+    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}
+
+String repositoryUrl
+//判断发到正式库还是snapshot库
+if (isReleaseBuild()) {
+    println 'Release Build'
+    //上传Release私有仓库
+    repositoryUrl = "http://nexus.medlinker.com/repository/local-android/"
+} else {
+    println 'Debug Build'
+    //上传snapshot私有仓库
+    repositoryUrl = "http://nexus.medlinker.com/repository/local-android-snapshot/"
+//    repositoryUrl = "/Users/hmy/Downloads/med-maven/"
+}
+
+//通过gradle.properties中VERSION_NAME常量判断是否是Release版本
+def isReleaseBuild() {
+    return !VERSION_NAME.contains("SNAPSHOT")
+}
+
+if (publishArchivesType == 1) {
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                pom.project {
+                    groupId gid
+                    artifactId pn
+                    version pluginVersionName
+                }
+
+                pom.withXml {
+                    def node = it.asElement()
+                    def nodeList = node.getElementsByTagName('dependency')
+                    nodeList.each { dependency ->
+                        dependency?.each { config ->
+                            if (config?.textContent == 'the-one-sdk') {
+                                config.parentNode.parentNode.removeChild(config.parentNode)
+                            }
+                            if (config?.textContent == 'onecar') {
+                                config.parentNode.parentNode.removeChild(config.parentNode)
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+} else if (publishArchivesType == 0) {
+    uploadArchives {
+        repositories {
+            mavenDeployer {
+                pom.project {
+                    name project.name
+                    groupId gid
+                    artifactId pn
+                    packaging = 'jar'
+                    version pluginVersionName
+                    description = 'dokit plugin'
+                }
+                 repository(url: repositoryUrl){
+                     authentication(userName:getRepositoryUserName(), password: getRepositoryPassword())
+                 }
+            }
+        }
+    }
+}

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--CommonButton作为按钮-->
+    <!--
+    按钮总览
+    高度分等级固定（40dp，32dp，30dp，28dp，20dp五种）
+    宽度有默认,但可变化,可以在xml文件中自己写layout_width覆盖默认值
+
+    关键词
+    border 边框按钮
+    Button1 一级按钮（高40dp固定，宽各为：特大-充满屏幕宽，大-255dp，中-169.5dp，小-121.5dp，特小-109dp）
+    Button2 二级按钮（高X宽dp：特大-32X108，大-30X84，中-28X84，小-24X64）
+
+    super_big 特大
+    big         大
+    medium      中
+    small       小
+    super_small 特小
+
+    例子
+    Button1_blue_small 一级小蓝色按钮
+    Button2_border_blue_big 二级大蓝色边框按钮
+    -->
+
+
+
+    <!-- ~~~~~~~~~~~~可以使用的~~~~~~~~~~~~~ -->
+    <!--
+    颜色： blue
+    边框： border_blue
+    size： super_big,big,medium,small四种
+    -->
+    <!-- ~~~~~~~~~~~~~~~ 一级按钮 ~~~~~~~~~~~~~~~-->
+    <!--~~~~~~~ 一级solid按钮 ~~~~~~~-->
+    <!--蓝色按钮-->
+    <style name="Button1_blue_super_big" parent="Button1_size_super_big">
+        <item name="solidColor">@color/button_bg_blue_selector</item>
+        <item name="android:textColor">@color/button_text_white_selector</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Button1_blue_big" parent="Button1_size_big">
+        <item name="solidColor">@color/button_bg_blue_selector</item>
+        <item name="android:textColor">@color/button_text_white_selector</item>
+    </style>
+    <style name="Button1_blue_small" parent="Button1_size_small">
+        <item name="solidColor">@color/button_bg_blue_selector</item>
+        <item name="android:textColor">@color/button_text_white_selector</item>
+    </style>
+
+    <!--红色按钮-->
+    <style name="Button1_red_big" parent="Button1_size_big">
+        <item name="solidColor">@color/button_bg_red_selector</item>
+        <item name="android:textColor">@color/button_text_white_selector</item>
+    </style>
+    <!--灰色按钮-->
+    <style name="Button1_gray_big" parent="Button1_size_big">
+        <item name="solidColor">@color/button_gray</item>
+        <item name="android:textColor">@color/ui_black3</item>
+    </style>
+    <style name="Button1_gray_small" parent="Button1_size_small">
+        <item name="solidColor">@color/button_gray</item>
+        <item name="android:textColor">@color/ui_black3</item>
+    </style>
+    <!--~~~~~~~ 一级stroke按钮 ~~~~~~~-->
+    <!-- 灰框 白底按钮-->
+    <style name="Button1_border_gray_big" parent="Button1_size_big">
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+        <item name="strokeColor">@color/button_bg_gray_selector</item>
+        <item name="solidColor">@color/ui_white</item>
+        <item name="android:textColor">@color/button_text_black_selector</item>
+    </style>
+
+    <!-- ~~~~~~~~~~~~~~~ 二级按钮 ~~~~~~~~~~~~~~~-->
+    <!--~~~~~~~ 二级solid按钮 ~~~~~~~-->
+    <!--蓝色按钮-->
+    <style name="Button2_blue_super_big" parent="Button2_size_super_big">
+        <item name="solidColor">@color/button_bg_blue_selector</item>
+        <item name="android:textColor">@color/button_text_white_selector</item>
+    </style>
+
+    <style name="Button2_blue_big" parent="Button2_size_big">
+        <item name="solidColor">@color/button_bg_blue_selector</item>
+        <item name="android:textColor">@color/button_text_white_selector</item>
+    </style>
+
+    <style name="Button2_blue_medium" parent="Button2_size_medium">
+        <item name="solidColor">@color/button_bg_blue_selector</item>
+        <item name="android:textColor">@color/button_text_white_selector</item>
+    </style>
+
+    <style name="Button2_blue_small" parent="Button2_size_small">
+        <item name="solidColor">@color/button_bg_blue_selector</item>
+        <item name="android:textColor">@color/button_text_white_selector</item>
+    </style>
+
+    <!-- 蓝框 白底按钮-->
+    <style name="Button2_border_blue_big" parent="Button2_size_big">
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+        <item name="strokeColor">@color/button_border_blue_text_selector</item>
+        <item name="solidColor">@color/button_border_blue_selector</item>
+        <item name="android:textColor">@color/button_border_blue_text_selector</item>
+    </style>
+
+    <style name="Button2_border_blue_medium" parent="Button2_size_medium">
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+        <item name="strokeColor">@color/button_border_blue_text_selector</item>
+        <item name="solidColor">@color/button_border_blue_selector</item>
+        <item name="android:textColor">@color/button_border_blue_text_selector</item>
+    </style>
+
+    <!-- 灰框 白底按钮-->
+    <style name="Button2_border_gray_big" parent="Button2_size_big">
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+        <item name="strokeColor">@color/button_bg_gray_selector</item>
+        <item name="solidColor">@color/ui_white</item>
+        <item name="android:textColor">@color/button_text_black_selector</item>
+    </style>
+
+    <style name="Button2_border_gray_medium" parent="Button2_size_medium">
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+        <item name="strokeColor">@color/button_bg_gray_selector</item>
+        <item name="solidColor">@color/ui_white</item>
+        <item name="android:textColor">@color/button_text_black_selector</item>
+    </style>
+
+    <style name="Button2_border_gray_small" parent="Button2_size_small">
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+        <item name="strokeColor">@color/button_bg_gray_selector</item>
+        <item name="solidColor">@color/ui_white</item>
+        <item name="android:textColor">@color/button_text_black_selector</item>
+    </style>
+
+    <!-- 橙框 白底按钮-->
+    <style name="Button2_border_orange_big" parent="Button2_size_big">
+        <item name="strokeWidth">@dimen/button_stroke_width</item>
+        <item name="strokeColor">@color/button_border_orange_text_selector</item>
+        <item name="solidColor">@color/button_border_orange_selector</item>
+        <item name="android:textColor">@color/button_border_orange_text_selector</item>
+    </style>
+
+
+    <!-- ~~~~~~~~~~~~基础~~~~~~~~~~~~~ -->
+
+    <style name="Button_width_match">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Button_width_wrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--  一级按钮，高度固定40dp，长度分5个等级  -->
+
+    <!--特大按钮样式 充满屏-->
+    <style name="Button1_size_super_big" parent="Button_width_match">
+        <item name="android:layout_height">@dimen/button1_height</item>
+        <item name="android:textSize">@dimen/button1_text_size</item>
+        <item name="selfRadius">@dimen/button1_radius</item>
+        <item name="android:layout_marginLeft">@dimen/button_super_big_margin_left</item>
+        <item name="android:layout_marginRight">@dimen/button_super_big_margin_right</item>
+        <item name="android:layout_marginTop">@dimen/button_super_big_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/button_super_big_margin_button</item>
+    </style>
+    <!--大按钮样式 宽255dp-->
+    <style name="Button1_size_big" parent="Button_width_wrap">
+        <item name="android:layout_height">@dimen/button1_height</item>
+        <item name="android:layout_width">@dimen/button1_with_big</item>
+        <item name="android:textSize">@dimen/button1_text_size</item>
+        <item name="selfRadius">@dimen/button1_radius</item>
+    </style>
+    <!--中按钮样式 宽169.5dp-->
+    <style name="Button1_size_medium" parent="Button_width_wrap">
+        <item name="android:layout_height">@dimen/button1_height</item>
+        <item name="android:layout_width">@dimen/button1_with_medium</item>
+        <item name="android:textSize">@dimen/button1_text_size</item>
+        <item name="selfRadius">@dimen/button1_radius</item>
+    </style>
+    <!--小按钮样式 宽121.5dp-->
+    <style name="Button1_size_small" parent="Button_width_wrap">
+        <item name="android:layout_height">@dimen/button1_height</item>
+        <item name="android:layout_width">@dimen/button1_with_small</item>
+        <item name="android:textSize">@dimen/button1_text_size</item>
+        <item name="selfRadius">@dimen/button1_radius</item>
+    </style>
+    <!--特小按钮样式 宽109dp-->
+    <style name="Button1_size_super_small" parent="Button_width_wrap">
+        <item name="android:layout_height">@dimen/button1_height</item>
+        <item name="android:layout_width">@dimen/button1_with_super_small</item>
+        <item name="android:textSize">@dimen/button1_text_size</item>
+        <item name="selfRadius">@dimen/button1_radius</item>
+    </style>
+
+
+    <!-- 二级按钮，高度分四个等级，宽度默认四个等级（默认可再设置layout_width覆盖style中属性） -->
+
+    <!--特大按钮样式 高32dp,宽默认108dp-->
+    <style name="Button2_size_super_big" parent="Button_width_wrap">
+        <item name="android:layout_height">@dimen/button2_height_super_big</item>
+        <item name="android:layout_width">@dimen/button2_width_super_big</item>
+        <item name="android:textSize">@dimen/button2_txt_size_super_big</item>
+        <item name="selfRadius">@dimen/button2_radius_super_big</item>
+    </style>
+    <!--大按钮样式 高30dp,宽默认84dp-->
+    <style name="Button2_size_big" parent="Button_width_wrap">
+        <item name="android:layout_height">@dimen/button2_height_big</item>
+        <item name="android:layout_width">@dimen/button2_width_big</item>
+        <item name="android:textSize">@dimen/button2_txt_size_big</item>
+        <item name="selfRadius">@dimen/button2_radius_big</item>
+    </style>
+    <!--中按钮样式 高28dp，宽默认84dp-->
+    <style name="Button2_size_medium" parent="Button_width_wrap">
+        <item name="android:layout_height">@dimen/button2_height_medium</item>
+        <item name="android:layout_width">@dimen/button2_width_medium</item>
+        <item name="android:textSize">@dimen/button2_txt_size_medium</item>
+        <item name="selfRadius">@dimen/button2_radius_medium</item>
+    </style>
+    <!--小按钮样式 高24dp，宽默认64dp-->
+    <style name="Button2_size_small" parent="Button_width_wrap">
+        <item name="android:layout_height">@dimen/button2_height_small</item>
+        <item name="android:layout_width">@dimen/button2_width_small</item>
+        <item name="android:textSize">@dimen/button2_txt_size_small</item>
+        <item name="selfRadius">@dimen/button2_radius_small</item>
+    </style>
+
+    <!--删除按钮-->
+    <style name="Button_delete" parent="Button_width_match">
+        <item name="android:layout_height">49dp</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/ui_red</item>
+        <item name="android:background">@color/ui_white</item>
+    </style>
+
+
+</resources>

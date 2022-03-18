@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hybrid_navigation_item_group"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="2dp">
+
+    <ImageView
+        android:id="@+id/hybrid_icon"
+        android:layout_width="@dimen/hybrid_navigation_icon_size"
+        android:layout_height="@dimen/hybrid_navigation_icon_size"
+        android:layout_gravity="center"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/hybrid_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/hybrid_navigation_height"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+</LinearLayout>

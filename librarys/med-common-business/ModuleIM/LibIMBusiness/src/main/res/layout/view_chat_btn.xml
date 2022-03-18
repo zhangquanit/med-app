@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/dp_16"
+    android:paddingEnd="@dimen/dp_16">
+
+    <TextView
+        android:id="@+id/tv_chat_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_rounded_rectangle_r22_blue_selector"
+        android:gravity="center"
+        android:textColor="#E6F1FF"
+        android:textSize="@dimen/sp_17" />
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/hybrid_navigation_height">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/hybrid_right_margin"
+        android:paddingEnd="@dimen/hybrid_right_margin">
+
+        <LinearLayout
+            android:id="@+id/hybrid_navigation_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+
+        <ImageView
+            android:id="@+id/hybrid_icon_close"
+            android:layout_width="@dimen/hybrid_btn_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:src="@mipmap/hybrid_ic_close"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/hybrid_navigation_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/hybrid_icon_left"
+            android:layout_width="@dimen/hybrid_navigation_icon_size"
+            android:layout_height="@dimen/hybrid_navigation_icon_size"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            tools:src="@mipmap/hybrid_ic_close"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/hybrid_navigation_title_group"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/hybrid_navigation_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:maxEms="8"
+                android:maxLines="1"
+                android:textColor="#2A2A2A"
+                android:textSize="@dimen/hybrid_title_sp"
+                tools:text="那等你拿电脑电脑电脑拿电脑电脑电脑拿电脑电脑电脑电脑" />
+
+            <TextView
+                android:id="@+id/hybrid_navigation_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:maxEms="10"
+                android:maxLines="1"
+                android:textColor="#4A4A4A"
+                android:textSize="@dimen/hybrid_sub_title_sp"
+                tools:text="电脑电脑电脑电脑电脑电脑"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/hybrid_icon_right"
+            android:layout_width="@dimen/hybrid_navigation_icon_size"
+            android:layout_height="@dimen/hybrid_navigation_icon_size"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            tools:src="@mipmap/hybrid_ic_close"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+</FrameLayout>

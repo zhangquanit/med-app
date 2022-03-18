@@ -1,0 +1,19 @@
+
+def config = rootProject.ext
+dependencies {
+    implementation project(':modules:BaseApp')
+    implementation config.dependencies["med-push"]
+    implementation config.dependencies["med-bridge"]
+    implementation config.dependencies["med-hybrid-core"]
+
+
+    /**
+     *  ########  组件化开发
+     *  1、添加组件  preImplementation project（"xxx"）
+     *  2、在pre目录下的SplashActivity.startPage()中启动你的页面
+     *  3、切换app到preDebug/preRelease执行
+     */
+    preImplementation project(":modules:Login")
+
+
+}

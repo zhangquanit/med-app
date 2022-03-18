@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ~~~~~~~~~~~~NavigationBar的id维护~~~~~~~~~~~~~ -->
+    <!--navigation_common.xml-->
+    <item name="navigation_content" type="id" />
+    <item name="navigation_fl_left" type="id" />
+    <item name="navigation_iv_left" type="id" />
+    <item name="navigation_tv_left" type="id" />
+    <item name="navigation_tv_title" type="id" />
+    <item name="navigation_tv_title_left" type="id" />
+    <item name="navigation_fl_center" type="id" />
+    <item name="navigation_fl_center_constraint" type="id" />
+    <item name="navigation_fl_right" type="id" />
+    <item name="navigation_iv_right" type="id" />
+    <item name="navigation_tv_right" type="id" />
+    <item name="navigation_fl_right2" type="id" />
+    <item name="navigation_iv_right2" type="id" />
+    <item name="navigation_tv_right2" type="id" />
+    <item name="navigation_line_h" type="id" />
+    <!--右边水平和竖直的 图标+文字 按钮-->
+    <!--navigation_view_btn_h.xml&navigation_view_btn_v.xml-->
+    <item name="navigation_ll_right_v" type="id" />
+    <item name="navigation_iv_right_v" type="id" />
+    <item name="navigation_tv_right_v" type="id" />
+    <item name="navigation_ll_right_h" type="id" />
+    <item name="navigation_tv_right_h" type="id" />
+    <item name="navigation_iv_right_h" type="id" />
+    <!--右边带消息的图标 navigation_view_icon_msg.xml-->
+    <item name="navigation_iv_right_icon_msg" type="id" />
+    <item name="navigation_bv_right_icon_msg" type="id" />
+    <!--标题右边的文字（如：接受中...） navigation_view_text_get.xml-->
+    <item name="navigation_vs_center_get" type="id" />
+    <item name="navigation_tv_center_get" type="id" />
+    <!--标题右边的图片（如：客服的绿色，灰色点） navigation_view_icon_state.xml-->
+    <item name="navigation_vs_center_state" type="id" />
+    <item name="navigation_iv_center_state" type="id" />
+
+
+    <!-- ~~~~~~~~~~~~Dialog的id维护~~~~~~~~~~~~~ -->
+    <!--Dialog公用-->
+    <!--TextView 标题-->
+    <item name="dialog_tv_title" type="id" />
+    <!--TextView 描述-->
+    <item name="dialog_tv_des" type="id" />
+    <!--TextView 取消-->
+    <item name="dialog_tv_cancel" type="id" />
+    <!--TextView 确认-->
+    <item name="dialog_tv_confirm" type="id" />
+    <!--ImageView close-->
+    <item name="dialog_iv_close" type="id" />
+    <!--自定义中间布局的容器-->
+    <item name="dialog_fl_content_base" type="id" />
+    <!--自定义中间布局的容器-->
+    <item name="dialog_fl_content" type="id" />
+    <!--ImageView 温馨提示，对话框头部icon-->
+    <item name="dialog_iv_top" type="id" />
+
+    <!--BottomDialog-->
+    <!--RecyclerView-->
+    <item name="dialog_bottom_rv_action" type="id" />
+    <!--Bottom ImageView close-->
+    <item name="dialog_bottom_iv_close" type="id" />
+    <!--Action Item ids-->
+    <item name="dialog_bottom_item_tv" type="id" />
+    <item name="dialog_bottom_item_line" type="id" />
+    <!-- WheelView -->
+    <item name="dialog_bottom_wv_wheel" type="id" />
+    <!--Bottom 底线-->
+    <item name="dialog_bottom_line" type="id" />
+
+    <!--PopupWindow-->
+    <item name="popup_base_content_container" type="id" />
+    <item name="popup_base_out_container" type="id" />
+    <item name="popup_base_shadow_bottom" type="id" />
+</resources>

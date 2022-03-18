@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.medlinker.widget.shape.ShapeLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dp_30"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/dp_8"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingEnd="@dimen/dp_8"
+    android:paddingBottom="@dimen/dp_5"
+    app:sp_radius="@dimen/dp_49"
+    app:sp_solid="#fff"
+    app:sp_strokeColor="#F5F5F5"
+    app:sp_strokeWidth="@dimen/dp_1">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_2"
+        tools:src="@drawable/ea_2" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#2A2A2A"
+        android:textSize="@dimen/sp_13"
+        tools:text="视频问诊" />
+
+</com.medlinker.widget.shape.ShapeLinearLayout>

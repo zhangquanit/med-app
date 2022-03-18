@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hybrid_navigation_height">48dp</dimen>
+    <dimen name="hybrid_navigation_icon_size">32dp</dimen>
+    <dimen name="hybrid_content_bg_shadow_height">5dp</dimen>
+    <dimen name="hybrid_progressbar_height">2dp</dimen>
+    <dimen name="hybrid_btn_width">40dp</dimen>
+    <dimen name="hybrid_right_margin">10dp</dimen>
+    <dimen name="hybrid_title_sp">16sp</dimen>
+    <dimen name="hybrid_sub_title_sp">12sp</dimen>
+</resources>

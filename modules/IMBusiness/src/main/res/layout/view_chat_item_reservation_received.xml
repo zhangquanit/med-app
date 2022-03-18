@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_chat_item_time" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/chat_to_bo_pading"
+        android:paddingBottom="@dimen/chat_to_bo_pading">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/chat_user_head_size"
+            android:layout_height="@dimen/chat_user_head_size"
+            android:layout_marginLeft="@dimen/chat_pading"
+            android:layout_marginRight="@dimen/chat_msg_head_margin" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_group_sender_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/font_color_8f8f98"
+                android:textSize="@dimen/sp_11"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/layout_content"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_avatar"
+                android:background="@drawable/shape_rectangular_corner_10"
+                android:orientation="vertical"
+                android:paddingLeft="14dp"
+                android:paddingTop="21.5dp"
+                android:paddingRight="14dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/color_454553"
+                    android:textSize="15sp"
+                    tools:text="预约了电话问诊" />
+
+                <TextView
+                    android:id="@+id/tv_reservation_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:textColor="@color/color_989AA7"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="预约时间：2020/07/23 11:34" />
+
+                <TextView
+                    android:id="@+id/tv_call_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:textColor="@color/color_989AA7"
+                    android:textSize="@dimen/sp_12"
+                    tools:text="通话时长：10分钟" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignBottom="@+id/ll_info"
+                    android:layout_marginTop="11dp"
+                    android:background="@color/color_e2e7f1" />
+
+                <TextView
+                    android:id="@+id/tv_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="9.5dp"
+                    android:layout_marginBottom="9dp"
+                    android:drawableEnd="@mipmap/settings_layout_arrow_right"
+                    android:drawablePadding="5dp"
+                    android:text="@string/text_modify_time"
+                    android:textColor="@color/color_454553_alpha60"
+                    android:textSize="@dimen/sp_12" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

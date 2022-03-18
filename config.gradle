@@ -1,0 +1,57 @@
+ext {
+    android = [
+            appName          : "App模板",
+            applicationId    : "net.medlinker.xx",
+            appIcon          : "@mipmap/icon_app",
+            clientName       : "xx",
+            compileSdkVersion: 29,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 26,
+            versionCode      : 10000,  //versionName: a.b.c -> versionCode = a*10000+b*100+c*1 如8.2.3->80203
+            versionName      : "1.0.0",
+    ]
+
+    project = [
+            hostTypeQa    : 4,
+            hostTypeOnline: 3,
+    ]
+
+    accounts = [
+
+            //bugly
+            "buglyEnabled"            : false,
+            "bugly_debug_appId"       : "",
+            "bugly_debug_appKey"      : "",
+            "bugly_release_appId"     : "",
+            "bugly_release_appKey"    : "",
+
+            //umeng apm
+            "umengApmEnabled"         : true,
+            "umeng_apm_release_appkey": "",
+            "umeng_apm_debug_appkey"  : "",
+
+            //logreport
+            "logreportEnabled"        : false,
+            "logreport_debug_appkey"  : "",
+            "logreport_release_appkey": "",
+
+            //闪验
+            "sy_appId"                : "",
+
+            //app升级
+            "update_debug_appkey"     : "",
+            "update_release_appkey"   : "",
+
+            //个推
+            "getuiEnabled"            : true,
+            "push_source"             : 1, //绑定clientId使用 后端为每个app分配的 参考值:1医联 6糖尿病 7骨科  @周广跃
+            "getui_appid_debug"       : "",
+            "getui_appid_release"     : "",
+
+            //统计(目前是神策)
+            "analytics_platforName"  : "", //区分不同app  比如 medlinker_app_orthopedics
+            "analytics_userType"      : "患者", //角色：患者端可以填写患者 医生端填写医生
+    ]
+
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <ImageView
+    android:id="@+id/rightImage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:padding="16dp"
+    android:src="@mipmap/close"
+    android:visibility="gone"/>
+
+  <TextView
+    android:id="@+id/title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textColor="@color/ff454553"
+    android:textSize="17sp"
+    android:text="提示"
+    android:layout_marginTop="33dp"/>
+
+  <TextView
+    android:id="@+id/dialog_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textColor="@color/ff9a9aa4"
+    android:textSize="17sp"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginTop="19dp"
+    android:text="此账号为机构帐号，无法使用此功能，如需使用请重新注册帐号"
+    android:layout_below="@+id/title"/>
+
+  <View
+    android:id="@+id/horizontalDividingLine"
+    android:layout_marginTop="25dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="2px"
+    android:background="@color/ffdddddd"
+    android:layout_below="@+id/dialog_content"/>
+
+  <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/horizontalDividingLine">
+
+    <TextView
+      android:id="@+id/cancel_action"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:textSize="16sp"
+      android:gravity="center"
+      android:text="不在提醒"
+      android:textColor="@color/ff9a9aa4"
+      android:paddingTop="14dp"
+      android:paddingBottom="14dp"/>
+
+    <View
+      android:id="@+id/dividingLine"
+      android:layout_marginTop="12dp"
+      android:layout_marginBottom="12dp"
+      android:layout_width="2px"
+      android:layout_height="match_parent"
+      android:background="@color/ffdddddd"/>
+
+    <TextView
+      android:id="@+id/okButton"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:textSize="16sp"
+      android:gravity="center"
+      android:text="知道了"
+      android:textColor="@color/theme_bg_color_1"
+      android:paddingTop="14dp"
+      android:paddingBottom="14dp"/>
+  </LinearLayout>
+
+</RelativeLayout>

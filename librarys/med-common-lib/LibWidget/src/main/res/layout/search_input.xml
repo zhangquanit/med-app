@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/navigation_height">
+
+    <ImageView
+        android:id="@+id/navigation_iv_left"
+        android:layout_width="@dimen/navigation_icon_size"
+        android:layout_height="@dimen/navigation_icon_size"
+        android:layout_marginLeft="@dimen/navigation_margin_left_right"
+        android:layout_marginRight="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ll_edit"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/navigation_back_gray"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/ll_edit"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/search_height"
+        android:background="@drawable/search_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/search_padding_left_right"
+        android:paddingRight="@dimen/search_padding_left_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/navigation_iv_left"
+        app:layout_constraintRight_toLeftOf="@id/navigation_tv_right"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_goneMarginLeft="@dimen/search_margin_left_right"
+        app:layout_goneMarginRight="@dimen/search_margin_left_right">
+
+        <ImageView
+            android:layout_width="@dimen/search_icon_size"
+            android:layout_height="@dimen/search_icon_size"
+            android:src="@mipmap/search_search_gray" />
+
+
+        <com.medlinker.widget.search.SearchEditText
+            android:id="@+id/searchEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/search_text_margin_left_right"
+            android:layout_marginRight="@dimen/search_text_margin_left_right"
+            android:layout_weight="1"
+            android:background="@null"
+            android:ellipsize="end"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:lines="1"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/search_text_color"
+            android:textColorHint="@color/search_text_color_hint"
+            android:textCursorDrawable="@drawable/search_input_cursor"
+            android:textSize="@dimen/search_text_size"
+            tools:hint="输入您的内容" />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="@dimen/search_icon_size"
+            android:layout_height="@dimen/search_icon_size"
+            android:src="@mipmap/search_delete_gray"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/navigation_tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/navigation_margin_text_left_right"
+        android:layout_marginRight="@dimen/navigation_margin_text_left_right"
+        android:text="@string/search_ui_do"
+        android:textColor="#2A2A2A"
+        android:textSize="@dimen/search_btn_text_size"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/ll_edit"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

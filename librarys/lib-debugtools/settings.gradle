@@ -1,0 +1,4 @@
+include ':LibDebugTools'
+include ':PluginDebugTools'
+include ':app'
+rootProject.name = "lib-debugtools"

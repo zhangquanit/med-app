@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ~~~~~~~~~~~~按钮~~~~~~~~~~~~~ -->
+    <!--登陆按钮高度-->
+    <dimen name="button_login_height">44dp</dimen>
+    <dimen name="button_login_radius">22dp</dimen>
+    <!--充满屏宽距离上下左右的Margin-->
+    <dimen name="button_super_big_margin_top">7dp</dimen>
+    <dimen name="button_super_big_margin_button">7dp</dimen>
+    <dimen name="button_super_big_margin_left">@dimen/button_space</dimen>
+    <dimen name="button_super_big_margin_right">@dimen/button_space</dimen>
+    <!--边框按钮的Stroke宽度-->
+    <dimen name="button_stroke_width">0.5dp</dimen>
+    <!--按钮的间距-->
+    <dimen name="button_space">12dp</dimen>
+
+    <!--～～～ 一级按钮 ～～～-->
+    <dimen name="button1_height">40dp</dimen>
+    <dimen name="button1_with_big">255dp</dimen>
+    <dimen name="button1_with_medium">169.5dp</dimen>
+    <dimen name="button1_with_small">121.5dp</dimen>
+    <dimen name="button1_with_super_small">109dp</dimen>
+    <dimen name="button1_radius">20dp</dimen>
+    <dimen name="button1_text_size">16sp</dimen>
+
+    <!--～～～ 二级按钮 ～～～-->
+    <!--特大按钮-->
+    <dimen name="button2_height_super_big">32dp</dimen>
+    <dimen name="button2_width_super_big">108dp</dimen>
+    <dimen name="button2_radius_super_big">16dp</dimen>
+    <dimen name="button2_txt_size_super_big">16sp</dimen>
+    <!--大按钮-->
+    <dimen name="button2_height_big">30dp</dimen>
+    <dimen name="button2_width_big">84dp</dimen>
+    <dimen name="button2_radius_big">15dp</dimen>
+    <dimen name="button2_txt_size_big">15sp</dimen>
+    <!--中按钮-->
+    <dimen name="button2_height_medium">28dp</dimen>
+    <dimen name="button2_width_medium">84dp</dimen>
+    <dimen name="button2_radius_medium">14dp</dimen>
+    <dimen name="button2_txt_size_medium">15sp</dimen>
+    <!--按钮中有图标的文字大小-->
+    <dimen name="button2_txt_size_icon_medium">14sp</dimen>
+    <!--小按钮-->
+    <dimen name="button2_height_small">24dp</dimen>
+    <dimen name="button2_width_small">64dp</dimen>
+    <dimen name="button2_radius_small">12dp</dimen>
+    <dimen name="button2_txt_size_small">12sp</dimen>
+
+    <!-- ~~~~~~~~~~~~标签~~~~~~~~~~~~~ -->
+
+    <!--特大标签-->
+    <dimen name="label_height_super_big">32dp</dimen>
+    <dimen name="label_width_super_big">111dp</dimen>
+    <dimen name="label_radius_super_big">16dp</dimen>
+    <dimen name="label_txt_size_super_big">15sp</dimen>
+
+    <!--大标签-->
+    <dimen name="label_height_big">30dp</dimen>
+    <dimen name="label_width_big">84dp</dimen>
+    <dimen name="label_radius_big">15dp</dimen>
+    <dimen name="label_txt_size_big">13sp</dimen>
+
+    <!-- ~~~~~~~~~~~~导航栏~~~~~~~~~~~~~ -->
+
+    <!--～～～高和间距～～～-->
+    <!--导航栏高度-->
+    <dimen name="navigation_height">44dp</dimen>
+    <!--导航栏标题最大字数-->
+    <item name="navigation_title_max_ems" format="integer" type="dimen">8</item>
+    <!--导航栏水平margin-->
+    <dimen name="navigation_margin_left_right">7dp</dimen>
+    <!--图片距离边是7dp，文字距离边是12dp-->
+    <dimen name="navigation_margin_text_left_right">12dp</dimen>
+    <!--导航栏按钮间距-->
+    <dimen name="navigation_space">12dp</dimen>
+
+    <!--～～～文字大小～～～-->
+    <!--标题文字大小-->
+    <dimen name="navigation_title_text_size">18sp</dimen>
+    <!--左右文字按钮文字大小-->
+    <dimen name="navigation_right_text_size">15sp</dimen>
+    <!--标题的补充文字  接收中...-->
+    <dimen name="navigation_supply_text_size">14sp</dimen>
+    <!--水平和竖直 文字大小-->
+    <dimen name="navigation_v_text_size">12sp</dimen>
+    <dimen name="navigation_h_text_size">14sp</dimen>
+
+    <!--～～～图片尺寸～～～-->
+    <dimen name="navigation_icon_size">32dp</dimen>
+    <dimen name="navigation_icon_size_vertical">20dp</dimen>
+    <dimen name="navigation_icon_size_horizontal">17dp</dimen>
+
+    <!-- ~~~~~~~~~~~~TAB~~~~~~~~~~~~~ -->
+    <!--下划线的固定宽高-->
+    <dimen name="Tab_slide_line_height">3dp</dimen>
+    <dimen name="Tab_slide_line_width">20dp</dimen>
+    <!--标准Tab-->
+    <dimen name="Tab_standard_height">42dp</dimen>
+    <dimen name="Tab_standard_text_size">16sp</dimen>
+    <!--1级有背景的Tab-->
+    <dimen name="Tab_bg1_height">32dp</dimen>
+    <dimen name="Tab_bg1_width">88dp</dimen>
+    <dimen name="Tab_bg1_radius">16dp</dimen>
+    <dimen name="Tab_bg1_text_size">16sp</dimen>
+    <dimen name="Tab_bg1_margin_top_bottom">6dp</dimen>
+    <dimen name="Tab_bg1_margin_left_right_two">99.5dp</dimen>
+    <dimen name="Tab_bg1_margin_left_right_three">55.5dp</dimen>
+    <!--1级背景Tab的外部大框颜色-->
+    <dimen name="Tab_bg1_out_stroke_width">0.5dp</dimen>
+    <!--2级有背景的Tab-->
+    <dimen name="Tab_bg2_height">30dp</dimen>
+    <dimen name="Tab_bg2_width">110dp</dimen>
+    <dimen name="Tab_bg2_radius">15dp</dimen>
+    <dimen name="Tab_bg2_text_size">14sp</dimen>
+
+    <!-- ~~~~~~~~~~~~搜索框~~~~~~~~~~~~~ -->
+    <!--～～～尺寸～～～-->
+    <dimen name="search_height">34dp</dimen>
+    <dimen name="search_radius">22dp</dimen>
+    <dimen name="search_margin_left_right">12dp</dimen>
+    <dimen name="search_margin_top_bottom">5dp</dimen>
+    <dimen name="search_padding_left_right">10dp</dimen>
+    <dimen name="search_text_margin_left_right">6dp</dimen>
+    <!--～～～图片大小～～～-->
+    <!--搜索框内的左边搜索图标，和右边的删除图标 的大小-->
+    <dimen name="search_icon_size">17dp</dimen>
+    <!--～～～文字大小～～～-->
+    <dimen name="search_text_size">14sp</dimen>
+    <dimen name="search_btn_text_size">15sp</dimen>
+
+    <!-- ~~~~~~~~~~~~分割线~~~~~~~~~~~~~ -->
+    <!--水平分割线的高度-->
+    <dimen name="line_h_height">0.5dp</dimen>
+
+    <!-- ~~~~~~~~~~~~对话框~~~~~~~~~~~~~ -->
+    <!--  共用  -->
+    <integer name="dialog_title_ems_max">8</integer>
+    <!--对话框动画时间-->
+    <integer name="dialog_animation_default_duration">300</integer>
+    <!--弹窗背景的圆角半径-->
+    <dimen name="dialog_bg_radius">10dp</dimen>
+    <!--文字大小-->
+    <dimen name="dialog_text_size_title">17sp</dimen>
+    <dimen name="dialog_text_size_des">16sp</dimen>
+
+    <!--  ConfirmDialog   -->
+    <!--弹窗背景水平padding-->
+    <dimen name="dialog_confirm_padding_h">20dp</dimen>
+    <dimen name="dialog_confirm_padding_top">24dp</dimen>
+    <dimen name="dialog_confirm_padding_bottom">20dp</dimen>
+    <!--弹窗背景水平margin-->
+    <dimen name="dialog_confirm_margin_h">40dp</dimen>
+    <!--标题到描述的间距-->
+    <dimen name="dialog_confirm_space_title_des">12dp</dimen>
+    <!--按钮到描述的间距-->
+    <dimen name="dialog_confirm_space_button_des">20dp</dimen>
+
+    <!--  BottomDialog   -->
+    <dimen name="dialog_bottom_title_height">44dp</dimen>
+    <!--标题栏按钮水平margin-->
+    <dimen name="dialog_bottom_btn_h_margin">16dp</dimen>
+    <!--标题栏文字按钮字体大小-->
+    <dimen name="dialog_bottom_btn_text_size">15sp</dimen>
+
+    <dimen name="dialog_action_item_height">54dp</dimen>
+    <dimen name="dialog_action_item_text_size">16sp</dimen>
+
+    <!-- ~~~~~~~~~~~~分享弹窗~~~~~~~~~~~~~ -->
+    <dimen name="dialog_share_item_text_size">13sp</dimen>
+    <dimen name="dialog_share_item_icon_size">49dp</dimen>
+
+    <!-- ~~~~~~~~~~~~输入框弹窗~~~~~~~~~~~~~ -->
+    <!--dialog_upload_pic_size+dialog_upload_pic_delete_size/2-->
+    <dimen name="dialog_upload_pic_size_all">59dp</dimen>
+    <dimen name="dialog_upload_pic_size">59dp</dimen>
+    <dimen name="dialog_upload_pic_delete_size">16dp</dimen>
+
+    <!-- ~~~~~~~~~~~~popup框~~~~~~~~~~~~~ -->
+    <!--患者Menu-->
+    <dimen name="popup_patient_menu_radius">6dp</dimen>
+    <dimen name="popup_patient_menu_height">49dp</dimen>
+    <dimen name="popup_patient_menu_width">145dp</dimen>
+    <dimen name="popup_patient_menu_icon_size">20dp</dimen>
+    <dimen name="popup_patient_menu_paddingLeft">22dp</dimen>
+
+    <!-- ~~~~~~~~~~~~输入框~~~~~~~~~~~~~ -->
+    <dimen name="input_edit_height">44dp</dimen>
+    <dimen name="input_edit_radius">22dp</dimen>
+    <dimen name="input_edit_border_width">1dp</dimen>
+    <dimen name="input_edit_space_h">16dp</dimen>
+    <dimen name="input_edit_space_v">5dp</dimen>
+    <!--～～～文字大小～～～-->
+    <dimen name="input_text_size">15sp</dimen>
+    <dimen name="input_get_code_text_size">14sp</dimen>
+
+
+</resources>

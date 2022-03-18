@@ -1,0 +1,8 @@
+//include ':LibFileUpload'
+include ':ModuleVideoCall'
+//include ':LibWidget'
+//##################IM模块
+include ':ModuleIM:LibIMBase'
+include ':ModuleIM:LibIMBusiness'
+include ':app'
+rootProject.name = "med-common-business"

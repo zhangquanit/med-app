@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="@dimen/dp_16">
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_20"
+            android:textColor="@color/ff007aff"
+            android:text="@string/med_all_switch" />
+
+        <CheckBox
+            android:id="@+id/all_switch"
+            android:layout_alignParentRight="true"
+            style="@style/DK.CheckBox" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/ff007aff"
+            android:text="@string/med_default" />
+
+        <CheckBox
+            android:id="@+id/default_switch"
+            android:layout_alignParentRight="true"
+            style="@style/DK.CheckBox" />
+
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/envGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/med_online"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginEnd="@dimen/dp_16" />
+
+        <RadioButton
+            android:id="@+id/qa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="@string/med_qa"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginEnd="@dimen/dp_16" />
+
+        <RadioButton
+            android:id="@+id/dev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="@string/med_dev"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginEnd="@dimen/dp_16" />
+
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:textColor="@color/ff007aff"
+            android:text="@string/med_custom" />
+
+        <CheckBox
+            android:id="@+id/custom_switch"
+            android:layout_alignParentRight="true"
+            style="@style/DK.CheckBox" />
+
+
+    </RelativeLayout>
+
+    <com.medlinker.debugtools.widget.DtClearEditText
+        android:id="@+id/et_env"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/et_bg_selector"
+        android:gravity="bottom"
+        android:hint="@string/input_env_hint"
+        android:imeOptions="actionNext"
+        android:paddingBottom="15dp"
+        android:layout_marginBottom="13dp"
+        android:paddingTop="15dp"
+        android:textColor="@drawable/et_color_selector"
+        android:textColorHint="@color/ffa8afc3"
+        android:textCursorDrawable="@drawable/et_input_cursor"
+        android:textSize="@dimen/sp_14" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:textColor="@color/ff007aff"
+        android:text="@string/med_api" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/one"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/dp_60">
+        <TextView
+            android:id="@+id/api"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:textSize="@dimen/sp_12"
+            tools:textColor="@color/ff777777"
+            android:text="@string/med_api" />
+
+        <TextView
+            android:id="@+id/use"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/ff007aff"
+            android:text="@string/use" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/two"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/dp_60">
+        <TextView
+            android:id="@+id/apiTwo"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:textSize="@dimen/sp_12"
+            tools:textColor="@color/ff777777"
+            android:text="@string/med_api" />
+
+        <TextView
+            android:id="@+id/useTwo"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/ff007aff"
+            android:text="@string/use" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/three"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="@dimen/dp_60">
+        <TextView
+            android:id="@+id/apiThree"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:textSize="@dimen/sp_12"
+            tools:textColor="@color/ff777777"
+            android:text="@string/med_api" />
+
+        <TextView
+            android:id="@+id/useThree"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:textSize="@dimen/sp_16"
+            android:textColor="@color/ff007aff"
+            android:text="@string/use" />
+    </LinearLayout>
+</LinearLayout>

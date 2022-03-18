@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/action_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="动作完成上报"
+            android:textColor="#2A2A2A"
+            android:textSize="@dimen/sp_18" />
+
+        <TextView
+            android:id="@+id/action_info"
+            android:layout_below="@+id/action_title"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击动作列表自动完成上报，方便测试周测评等"
+            android:textColor="#9A9A9A"
+            android:textSize="@dimen/sp_12" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/action_report_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:thumb="@drawable/shape_dt_switch_thumb"
+            app:track="@drawable/bg_dt_switch"
+            tools:checked="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="#D1D1D1" />
+
+</LinearLayout>

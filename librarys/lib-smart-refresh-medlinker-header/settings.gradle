@@ -1,0 +1,3 @@
+include ':LibSmartRefreshHeaderMedlinker'
+include ':app'
+rootProject.name = "SmartRefreshHeaderMedlinker"

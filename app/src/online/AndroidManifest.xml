@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.medlinker.android">
+
+    <application
+        android:name="net.medlinker.android.MedlinkerApp"
+        android:allowBackup="false"
+        android:icon="${APP_ICON}"
+        android:label="${APP_NAME}"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup, android:label">
+
+        <activity
+            android:name="net.medlinker.android.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="net.medlinker.android.MainApp"
+            android:value="@string/med_app_startup"  />
+
+    </application>
+
+</manifest>

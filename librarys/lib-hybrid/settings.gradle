@@ -1,0 +1,5 @@
+include ':LibCommunication'
+include ':bridge'
+include ':hybrid-core'
+include ':app'
+rootProject.name = "LibHybridMed"

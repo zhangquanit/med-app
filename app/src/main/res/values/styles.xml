@@ -1,0 +1,22 @@
+<resources>
+
+    <style name="Transparent_Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="invite_activity_change_anim" parent="@android:style/Animation.Activity">
+        <!-- A启动B B的进入动画 -->
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>
+        <!-- A启动B A的退出动画 -->
+        <item name="android:activityOpenExitAnimation">@anim/out_from_left</item>
+        <!-- B回退到A    A的进入动画 -->
+        <item name="android:activityCloseEnterAnimation">@anim/in_from_left</item>
+        <!-- B回退到A    B的退出动画 -->
+        <item name="android:activityCloseExitAnimation">@anim/out_from_right</item>
+    </style>
+</resources>

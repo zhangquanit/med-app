@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.medlinker.debugtools">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application>
+        <activity android:name=".fun.lane.DTEnvLaneActivity"
+            android:theme="@style/ToolsTheme"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".base.DTBaseActivity"
+            android:theme="@style/ToolsTheme"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".fun.capture.DTNetworkCaptureActivity"
+            android:theme="@style/ToolsTheme"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".fun.capture.DTNetworkDetailActivity"
+            android:theme="@style/ToolsTheme"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".fun.capture.DTJsonPreviewActivity"
+            android:theme="@style/ToolsTheme"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".fun.router.DTRouterActivity"
+            android:theme="@style/ToolsTheme"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".fun.capture.WhiteListActivity"
+            android:theme="@style/ToolsTheme"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

@@ -1,0 +1,160 @@
+/**
+ * 执行命令
+ */
+def static execShellCmd(String cmd) {
+    println("执行命令：" + cmd)
+    def proc = null
+    BufferedReader br = null
+    try {
+        proc = cmd.execute()
+        br = new BufferedReader(new InputStreamReader(proc.inputStream))
+        String line = null
+        while ((line = br.readLine()) != null) {
+            println(line)
+        }
+        br.close()
+        proc.waitFor()
+    } finally {
+        try {
+            if (null != br) br.close()
+        } catch (Exception e) {
+
+        }
+        try {
+            if (null != proc) proc.destroy()
+        } catch (Exception e) {
+
+        }
+    }
+}
+
+println()
+println("################################ config_libs.gradle检查 START ##################")
+def useIdeaPlugin = true  //当前使用idea插件同步依赖库
+String libDirName = "x_dev/libs"
+File libDevDir = new File(rootDir, libDirName)
+if (!libDevDir.exists()) {
+    def command = """git clone https://git.medlinker.com/android/x_libs.git ${libDirName}"""
+    def proc = command.execute()
+    proc.waitFor()
+    proc.destroy()
+} else { //更新仓库
+    def execPullRequest = false
+    def requests = gradle.getStartParameter().getTaskRequests()
+    requests.forEach {
+        if (null != it.args) {
+            it.args.forEach({ arg ->
+                if (arg.contains("clean")) {
+                    execPullRequest = true
+                }
+            })
+        }
+    }
+    if (execPullRequest) {
+        def x_lib_git = rootDir.getAbsolutePath() + File.separator + "x_dev" + File.separator + "libs" + File.separator + ".git"
+        def commandLine = "git --git-dir=$x_lib_git pull"
+        execShellCmd(commandLine)
+    }
+}
+
+if (useIdeaPlugin) {
+    println("################################ config_libs.gradle检查 END ####################")
+    println()
+    return
+}
+
+//------------------动态创建依赖库分支实现方式
+def configLibFile = new File("${rootDir.getAbsolutePath()}/x_dev/libs/config_libs.gradle")
+if (!configLibFile.exists()) {
+    return
+}
+gradle.addProjectEvaluationListener(new ProjectEvaluationListener() {
+    @Override
+    void beforeEvaluate(Project project) {
+        if (project.getPath() == rootProject.getPath()) {
+            //引入config_libs.gradle
+            project.apply from: configLibFile
+        }
+    }
+
+    @Override
+    void afterEvaluate(Project project, ProjectState projectState) {
+    }
+})
+
+/**
+ * 读取config.gradle 获取app版本号
+ */
+def static getAppVersionName(rootProject) {
+    File configGradle = new File(rootProject.projectDir, "config.gradle")
+    BufferedReader br = null
+    String versionName = null
+    try {
+        br = new BufferedReader(new InputStreamReader(new FileInputStream(configGradle), "UTF-8"))
+        String line = null
+        while ((line = br.readLine()) != null) {//使用readLine方法，一次读一行
+            if (line.contains("versionName")) {
+                line = line.trim().replace(" ", "")
+                if (line.contains("versionName:\"")) {
+                    versionName = line.replace("versionName:\"", "").replace("\",", "")
+                    break
+                }
+            }
+        }
+        br.close()
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (null != br) br.close()
+        } catch (Exception e) {
+
+        }
+    }
+    return versionName
+}
+
+
+String gitDir = "${rootProject.projectDir}/x_dev/libs"
+String shellScript = "${rootProject.projectDir}/x_dev/libscript/check.sh"
+execShellCmd("chmod 777 ${shellScript}")
+
+def releaseCmd = false
+def startParameter = gradle.getStartParameter()
+def gradleProperties = startParameter.getProjectProperties()
+for (Map.Entry<String, String> entry : gradleProperties.entrySet()) {
+    if (entry.getKey() == "hostType" && entry.getValue() == "3") {
+        releaseCmd = true
+        break
+    }
+}
+if (releaseCmd) {
+    println("打包命令包含hostType=3 给通用依赖库创建tag")
+    //读取config.gradle 获取版本号
+    def versionName = getAppVersionName(rootProject)
+    if (null != versionName) {
+        def tagName = rootProject.getName() + "_tag_v" + versionName
+        execShellCmd("${shellScript} ${gitDir} tag ${tagName}")
+    }
+    return
+}
+
+execShellCmd("git remote -v")
+
+//检测分支
+def projectName = rootProject.getName()
+def cmd = """git rev-parse --abbrev-ref HEAD"""
+def proc = cmd.execute()
+BufferedReader br = new BufferedReader(new InputStreamReader(proc.inputStream))
+def branch = br.readLine()
+br.close()
+proc.waitFor()
+proc.destroy()
+
+def branchName = projectName + "_" + branch
+println("branchName=" + branchName)
+cmd = "${shellScript} ${gitDir} branch ${branchName}"
+execShellCmd(cmd)
+
+println("################################ config_libs.gradle检查 END ####################")
+println()

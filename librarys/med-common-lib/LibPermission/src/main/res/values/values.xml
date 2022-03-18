@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--权限说明弹框默认标题 -->
+    <string name="permission_explain_title">权限使用说明</string>
+    <!--权限说明弹框默认内容文案 -->
+    <string name="permission_explain_content_default">为保证你顺利使用相关功能，请允许开启相应权限</string>
+    <string name="permission_explain_content">当您使用APP时，会在%s。不授权上述权限，不影响APP其他功能使用。</string>
+    <!--权限申请弹框默认标题 -->
+    <string name="permission_title">权限申请</string>
+    <!--权限申请弹框默认内容文案 -->
+    <string name="permission_rational_content">在设置-应用-%s-权限中开启权限，以正常使用相关功能</string>
+
+
+    <!--权限说明弹框页面背景 -->
+    <color name="permission_explain_dialog_bg">#66000000</color>
+    <!--权限说明弹框圆角-->
+    <dimen name="permission_explain_dialog_bg_radius">10dp</dimen>
+    <!--权限说明弹框背景颜色 -->
+    <color name="permission_explain_dialog_bg_color">#EBEBEB</color>
+    <!--权限说明弹框左右间距 -->
+    <dimen name="permission_explain_dialog_margin_left">15dp</dimen>
+    <dimen name="permission_explain_dialog_margin_right">15dp</dimen>
+    <!--权限说明弹框内容padding -->
+    <dimen name="permission_explain_dialog_padding">20dp</dimen>
+    <!--权限说明弹框标题文字大小 -->
+    <dimen name="permission_explain_dialog_title_size">@dimen/dialog_text_size_title</dimen>
+    <!--权限说明弹框标题文字颜色 -->
+    <color name="permission_explain_dialog_title_color">@color/dialog_title</color>
+    <!--权限说明弹框内容文字大小 -->
+    <dimen name="permission_explain_dialog_desc_size">@dimen/dialog_text_size_des</dimen>
+    <!--权限说明弹框内容文字颜色 -->
+    <color name="permission_explain_dialog_desc_color">@color/dialog_des</color>
+</resources>

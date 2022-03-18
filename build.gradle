@@ -1,0 +1,106 @@
+apply from: "config.gradle"
+apply from: "config_libs.gradle"
+apply from: "config_libs_ext.gradle"
+apply from: "configs/buildTime.gradle"
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://mirrors.huaweicloud.com/repository/maven/'
+        }
+        maven {
+            url 'http://nexus.medlinker.com/repository/group-android/'
+            credentials {
+                username = 'android-developer'
+                password = 'developer123'
+            }
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+        google()
+        mavenCentral()
+        jcenter()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+
+    }
+    ext.kotlin_version = "1.5.0"
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.1'
+        //Arouter自动注册
+        classpath "com.alibaba:arouter-register:1.0.2"
+        //DebugTools
+        classpath 'com.medlinker:dokitx-plugin:1.0.0'
+        classpath "com.didichuxing.tools:droidassist:1.1.1"
+//        classpath "io.realm:realm-gradle-plugin:5.1.0"
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url 'https://mirrors.huaweicloud.com/repository/maven/'
+        }
+        maven {
+            url 'http://nexus.medlinker.com/repository/group-android/'
+            credentials {
+                username = 'android-developer'
+                password = 'developer123'
+            }
+        }
+
+        maven {
+            url 'https://maven.aliyun.com/repository/public/'
+        }
+
+        maven {
+            url "https://mvn.getui.com/nexus/content/repositories/releases/"
+        }
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+
+    gradle.taskGraph.whenReady {
+        tasks.each { task ->
+            if (task.name.contains("ReleaseJsAndAssets")) {
+                task.enabled = false
+            }
+        }
+    }
+
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+subprojects {
+    project.afterEvaluate {
+        project.plugins.withId('com.android.library') {
+            project.android.compileSdkVersion rootProject.ext.android.compileSdkVersion
+            project.android.buildToolsVersion rootProject.ext.android.buildToolsVersion
+//            project.android.defaultConfig.minSdkVersion rootProject.ext.android.minSdkVersion
+            project.android.defaultConfig.targetSdkVersion rootProject.ext.android.targetSdkVersion
+        }
+    }
+
+    println("------" + project.path)
+    //依赖库替换成module源码
+    configurations.all {
+        resolutionStrategy.dependencySubstitution {
+//            substitute module('com.medlinker.base:libbase') with project(':LibBase')
+        }
+    }
+}
+

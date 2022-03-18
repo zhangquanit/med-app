@@ -1,0 +1,42 @@
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+
+        maven {
+            url 'http://nexus.medlinker.com/repository/group-android/'
+            credentials {
+                username = 'android-developer'
+                password = 'developer123'
+            }
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+
+        maven {
+            url 'http://nexus.medlinker.com/repository/group-android/'
+            credentials {
+                username = 'android-developer'
+                password = 'developer123'
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
